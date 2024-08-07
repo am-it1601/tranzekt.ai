@@ -1,0 +1,11 @@
+Creating a Next Js Project in current directory
+
+    npx create-next-app@latest ./  --ts --use-npm 
+
+
+Shadcn setup for next project
+    https://ui.shadcn.com/docs/installation/next
+
+Component reference for next project
+    https://ui.shadcn.com/docs/installation/next
+
