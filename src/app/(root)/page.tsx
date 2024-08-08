@@ -38,7 +38,7 @@ const Home = () => {
                         {
                             currentBalance: 1250.53,
                         },
-                    ] as Account[]
+                    ] as Account[] & Bank[]
                 }
                 transactions={[]}
             />
