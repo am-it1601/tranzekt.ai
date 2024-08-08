@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { FunctionComponent } from 'react';
 
-import { cn } from '../../lib/utils';
 import { sidebarLinks } from '../constants';
+import { cn } from '../lib/utils';
 
 const SideNav: FunctionComponent<SidebarProps> = ({ user }) => {
     const pathName = usePathname();
