@@ -9,3 +9,9 @@ Shadcn setup for next project
 Component reference for next project
     https://ui.shadcn.com/docs/installation/next
 
+
+Appwrite docs : 
+Server Side Auth :  https://appwrite.io/docs/products/auth/server-side-rendering
+
+NEXT Based SSR AUTH : 
+https://appwrite.io/docs/tutorials/nextjs-ssr-auth/step-1

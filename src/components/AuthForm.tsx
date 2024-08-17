@@ -1,43 +1,76 @@
 'use client';
+import { Loader2 } from 'lucide-react';
+import moment from 'moment';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { FunctionComponent, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
-import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import { Form } from '@/components/ui/form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { register, signIn } from '../lib/actions/user.actions';
+import { SignInFormSchema } from '../lib/zod';
 import FormInput from './FormInput';
 
-const formSchema = z.object({
-    email: z.string().email({
-        message: '',
-    }),
-});
-
 const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
+    const formSchema = SignInFormSchema({ type });
+    const router = useRouter();
+
     const [user, setUser] = useState(null);
+    const [Loading, setLoading] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             email: '',
+            password: '',
         },
     });
 
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        setLoading(true);
+        try {
+            console.log(values);
+            if (type === 'sign-up') {
+                // const userData = {
+                //     firstName: values.firstName,
+                //     lastName: values.lastName,
+                //     address: values.address,
+                //     city: values.city,
+                //     state: values.state,
+                //     postalCode: values.postalCode,
+                //     dateOfBirth: values.dateOfBirth,
+                //     ssn: values.ssn,
+                //     email: values.email,
+                //     password: values.password,
+                // };
+
+                const newUser = await register({
+                    ...values,
+                    dateOfBirth: moment(
+                        values.dateOfBirth,
+                        'dd/mm/yyyy'
+                    ).toDate(),
+                });
+                console.log(newUser);
+                setUser(newUser);
+            } else if (type === 'sign-in') {
+                const response = await signIn({
+                    email: values.email,
+                    password: values.password,
+                });
+
+                if (response) router.push('/');
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -81,22 +114,116 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
                             onSubmit={form.handleSubmit(onSubmit)}
                             className="space-y-8"
                         >
+                            {type === 'sign-up' && (
+                                <>
+                                    <div className="flex gap-4">
+                                        <FormInput
+                                            label="First Name"
+                                            placeholder="First Name"
+                                            name="firstName"
+                                            control={form.control}
+                                        />
+                                        <FormInput
+                                            label="Last Name"
+                                            placeholder="Last Name"
+                                            name="lastName"
+                                            control={form.control}
+                                        />
+                                    </div>
+                                    <FormInput
+                                        label="Address"
+                                        placeholder="Address"
+                                        name="address"
+                                        control={form.control}
+                                    />
+                                    <FormInput
+                                        label="City"
+                                        placeholder="City"
+                                        name="city"
+                                        control={form.control}
+                                    />
+                                    <div className="flex gap-4">
+                                        <FormInput
+                                            label="State"
+                                            placeholder="State"
+                                            name="state"
+                                            control={form.control}
+                                        />
+                                        <FormInput
+                                            label="Zip Code"
+                                            placeholder="Zip Code"
+                                            name="postalCode"
+                                            control={form.control}
+                                        />
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <FormInput
+                                            label="Date of Birth"
+                                            placeholder="dd/mm/yyyy"
+                                            name="dateOfBirth"
+                                            control={form.control}
+                                        />
+                                        <FormInput
+                                            label="SSN"
+                                            placeholder="ssn"
+                                            name="ssn"
+                                            control={form.control}
+                                        />
+                                    </div>
+                                </>
+                            )}
                             <FormInput
-                                form={form}
+                                control={form.control}
                                 label="Username"
-                                name="username"
+                                name="email"
+                                placeholder="Enter your email address"
                             />
                             <FormInput
-                                form={form}
+                                control={form.control}
                                 label="Password"
                                 name="password"
                                 type="password"
                                 placeholder="Please enter your password"
                             />
 
-                            <Button type="submit">Submit</Button>
+                            <div className="flex flex-col gap-4">
+                                <Button
+                                    type="submit"
+                                    className="form-btn"
+                                    disabled={Loading}
+                                >
+                                    {Loading ? (
+                                        <>
+                                            <Loader2
+                                                size={20}
+                                                className="animate-spin"
+                                            />{' '}
+                                            &nbsp; Loading...
+                                        </>
+                                    ) : type === 'sign-in' ? (
+                                        'Sign In'
+                                    ) : (
+                                        'Sign Up'
+                                    )}
+                                </Button>
+                            </div>
                         </form>
                     </Form>
+                    <footer className="flex justify-center gap-1">
+                        <p className="text-14 font-normal text-gray-600">
+                            {type === 'sign-in'
+                                ? "Don't have an account?"
+                                : 'Already have an account?'}
+                        </p>
+                        <Link
+                            href={type === 'sign-in' ? '/sign-up' : '/sign-in'}
+                            className="form-link"
+                        >
+                            {type === 'sign-in' ? 'Sign up' : 'Sign in'}
+                        </Link>
+                    </footer>
+                    {JSON.stringify(form.formState.errors) +
+                        `${form.formState.isValid}`}
                 </>
             )}
         </section>
