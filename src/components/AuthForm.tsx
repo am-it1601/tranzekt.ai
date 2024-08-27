@@ -15,6 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { register, signIn } from '../lib/actions/user.actions';
 import { SignInFormSchema } from '../lib/zod';
 import FormInput from './FormInput';
+import PlaidLinkAccount from './PlaidLinkAccount';
 
 const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
     const formSchema = SignInFormSchema({ type });
@@ -34,29 +35,28 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         setLoading(true);
         try {
-            console.log(values);
             if (type === 'sign-up') {
-                // const userData = {
-                //     firstName: values.firstName,
-                //     lastName: values.lastName,
-                //     address: values.address,
-                //     city: values.city,
-                //     state: values.state,
-                //     postalCode: values.postalCode,
-                //     dateOfBirth: values.dateOfBirth,
-                //     ssn: values.ssn,
-                //     email: values.email,
-                //     password: values.password,
-                // };
+                const userData = {
+                    firstName: values.firstName!,
+                    lastName: values.lastName!,
+                    address: values.address!,
+                    city: values.city!,
+                    state: values.state!,
+                    postalCode: values.postalCode!,
+                    dateOfBirth: values.dateOfBirth!,
+                    ssn: values.ssn!,
+                    email: values.email,
+                    password: values.password,
+                };
 
                 const newUser = await register({
-                    ...values,
+                    ...userData,
                     dateOfBirth: moment(
-                        values.dateOfBirth,
+                        userData.dateOfBirth,
                         'dd/mm/yyyy'
                     ).toDate(),
                 });
-                console.log(newUser);
+
                 setUser(newUser);
             } else if (type === 'sign-in') {
                 const response = await signIn({
@@ -106,7 +106,9 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
                 </div>
             </header>
             {user ? (
-                <div className="flex flex-col gap-4"></div>
+                <div className="flex flex-col gap-4">
+                    <PlaidLinkAccount user={user} variant="primary" />
+                </div>
             ) : (
                 <>
                     <Form {...form}>
@@ -222,8 +224,6 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
                             {type === 'sign-in' ? 'Sign up' : 'Sign in'}
                         </Link>
                     </footer>
-                    {JSON.stringify(form.formState.errors) +
-                        `${form.formState.isValid}`}
                 </>
             )}
         </section>

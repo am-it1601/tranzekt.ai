@@ -6,6 +6,7 @@ import React, { FunctionComponent } from 'react';
 
 import { sidebarLinks } from '../constants';
 import { cn } from '../lib/utils';
+import BottomNav from './BottomNav';
 
 const SideNav: FunctionComponent<SidebarProps> = ({ user }) => {
     const pathName = usePathname();
@@ -14,7 +15,7 @@ const SideNav: FunctionComponent<SidebarProps> = ({ user }) => {
             <nav className="flex flex-col gap-4">
                 <Link
                     href="/"
-                    className="mb-12 cursor-pointer items-center gap-2 flex"
+                    className="mb-12 flex cursor-pointer items-center gap-2"
                 >
                     <Image
                         src="/icons/logo.svg"
@@ -59,6 +60,7 @@ const SideNav: FunctionComponent<SidebarProps> = ({ user }) => {
                     );
                 })}
             </nav>
+            <BottomNav user={user} />
         </section>
     );
 };

@@ -16,6 +16,7 @@ import {
 
 import { sidebarLinks } from '../constants';
 import { cn } from '../lib/utils';
+import BottomNav from './BottomNav';
 
 const MobileNav: FunctionComponent<MobileNavProps> = ({ user }) => {
     const pathName = usePathname();
@@ -34,7 +35,7 @@ const MobileNav: FunctionComponent<MobileNavProps> = ({ user }) => {
                 <SheetContent side="left" className="border-none bg-white">
                     <Link
                         href="/"
-                        className="cursor-pointer flex items-center gap-1 px-4"
+                        className="flex cursor-pointer items-center gap-1 px-4"
                     >
                         <Image
                             src="/icons/logo.svg"
@@ -95,7 +96,7 @@ const MobileNav: FunctionComponent<MobileNavProps> = ({ user }) => {
                                 USER
                             </nav>
                         </SheetClose>
-                        {/* <Footer user={user} type="mobile" /> */}
+                        <BottomNav user={user} type="mobile" />
                     </div>
                 </SheetContent>
             </Sheet>
