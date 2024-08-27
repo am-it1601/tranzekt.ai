@@ -75,10 +75,10 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
 
     return (
         <section className="auth-form">
-            <header className="flex flex-col gap-5 md:gap-8">
+            <header className="flex flex-col gap-4 md:gap-6">
                 <Link
                     href="/"
-                    className="flex cursor-pointer items-center gap-1"
+                    className="flex cursor-pointer items-center gap-1 self-center"
                 >
                     <Image
                         src="/icons/logo.svg"
@@ -90,7 +90,7 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
                         Tranzekt.AI
                     </h1>
                 </Link>
-                <div className="flex flex-col gap-1 md:gap-3">
+                <div className="flex flex-col gap-1 md:gap-2">
                     <h1 className="text-24 lg:text-36 font-semibold text-gray-900">
                         {user
                             ? 'Link Account'
@@ -114,11 +114,11 @@ const AuthForm: FunctionComponent<AuthFormProps> = ({ type }) => {
                     <Form {...form}>
                         <form
                             onSubmit={form.handleSubmit(onSubmit)}
-                            className="space-y-8"
+                            className="space-y-6"
                         >
                             {type === 'sign-up' && (
                                 <>
-                                    <div className="flex gap-4">
+                                    <div className="flex gap-3">
                                         <FormInput
                                             label="First Name"
                                             placeholder="First Name"

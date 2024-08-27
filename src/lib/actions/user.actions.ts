@@ -73,6 +73,7 @@ export const register = async ({ password, ...userData }: SignUpParams) => {
         const newUser = await database.createDocument(
             DATABASE_ID!,
             USER_COLLECTION_ID!,
+
             ID.unique(),
             {
                 ...userData,
@@ -81,7 +82,6 @@ export const register = async ({ password, ...userData }: SignUpParams) => {
                 dwollaCustomerUrl,
             }
         );
-        console.log(DATABASE_ID, USER_COLLECTION_ID, newUser);
 
         const session = await account.createEmailPasswordSession(
             email,
@@ -123,7 +123,7 @@ export async function getLoggedInUser() {
         const user = await account.get();
         return parseStringify(user);
     } catch (error) {
-        console.log('AUTH_ERROR : ', error);
+        console.error('AUTH_ERROR : ', error);
         return null;
     }
 }

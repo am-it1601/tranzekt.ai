@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
 import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from 'react-plaid-link';
@@ -32,7 +33,7 @@ const PlaidLinkAccount: React.FunctionComponent<PlaidLinkProps> = ({
     useEffect(() => {
         const getLinkToken = async () => {
             const data = await createLinkToken(user);
-
+            console.log(data);
             setToken(data?.token);
         };
         getLinkToken();
@@ -42,13 +43,37 @@ const PlaidLinkAccount: React.FunctionComponent<PlaidLinkProps> = ({
     return (
         <>
             {variant === 'primary' ? (
-                <Button className="plaidlink-primary" disabled={!ready}>
+                <Button
+                    className="plaidlink-primary"
+                    disabled={!ready}
+                    onClick={() => open()}
+                >
                     Connect Bank
                 </Button>
             ) : variant === 'ghost' ? (
-                <Button>Connect Bank</Button>
+                <Button onClick={() => open()} className="plaidlink-ghost">
+                    <Image
+                        src="/icons/connect-bank.svg"
+                        alt="connect bank"
+                        width={24}
+                        height={24}
+                    />
+                    <p className="hiddenl text-[16px] font-semibold text-black-2 xl:block">
+                        Connect bank
+                    </p>
+                </Button>
             ) : (
-                <Button>Connect Bank</Button>
+                <Button onClick={() => open()} className="plaidlink-default">
+                    <Image
+                        src="/icons/connect-bank.svg"
+                        alt="connect bank"
+                        width={24}
+                        height={24}
+                    />
+                    <p className="text-[16px] font-semibold text-black-2">
+                        Connect bank
+                    </p>
+                </Button>
             )}
         </>
     );

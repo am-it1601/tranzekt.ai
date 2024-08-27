@@ -21,18 +21,16 @@ export const createLinkToken = async (user: User) => {
             user: {
                 client_user_id: user.$id,
             },
-            client_name: user.name,
+            client_name: user.firstName + ' ' + user.lastName,
             products: ['auth'] as Products[],
-            country_codes: ['US', 'IN'] as CountryCode[],
+            country_codes: ['US', 'CA', 'GB'] as CountryCode[],
             language: 'en',
         };
 
         const response = await plaidClient.linkTokenCreate(tokenParams);
 
-        console.log('Create link token', response);
-
         return parseStringify({
-            linkToken: response.data.link_token,
+            token: response.data.link_token,
         });
     } catch (error) {
         console.error(error);
@@ -46,7 +44,6 @@ export const exchangePublicToken = async ({
     publicToken: string;
     user: User;
 }) => {
-    console.log(publicToken, user);
     try {
         const response = await plaidClient.itemPublicTokenExchange({
             public_token: publicToken,

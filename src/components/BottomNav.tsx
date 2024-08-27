@@ -12,7 +12,6 @@ const BottomNav: React.FunctionComponent<FooterProps> = ({
 
     const handleSignOut = async () => {
         const signOut = await logoutAccount();
-        console.log('SignOut', signOut);
 
         if (signOut) router.push('/sign-in');
     };
