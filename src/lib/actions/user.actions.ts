@@ -124,7 +124,6 @@ export async function getLoggedInUser() {
         return parseStringify(user);
     } catch (error) {
         console.error('AUTH_ERROR : ', error);
-        return null;
     }
 }
 
