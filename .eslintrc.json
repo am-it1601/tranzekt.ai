@@ -5,8 +5,8 @@
         "plugin:@next/next/recommended",
         "plugin:prettier/recommended"
     ],
-    "plugins": ["prettier", "prettier-plugin-tailwindcss"],
+    "plugins": ["prettier"],
     "rules": {
-        "prettier/prettier": ["error"]
+        "prettier/prettier": ["error", { "endOfLine": "auto" }]
     }
 }
