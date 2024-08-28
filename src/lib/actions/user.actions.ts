@@ -95,7 +95,9 @@ export const register = async ({ password, ...userData }: SignUpParams) => {
             secure: true,
         });
 
-        return parseStringify(newUser);
+        const user = await getUserInfo({ userId: session.userId });
+
+        return parseStringify(user);
     } catch (error) {
         console.error(error);
     }
@@ -120,10 +122,14 @@ export const getUserInfo = async ({ userId }: getUserInfoProps) => {
 export async function getLoggedInUser() {
     try {
         const { account } = await createSessionClient();
-        const user = await account.get();
+        const result = await account.get();
+
+        const user = await getUserInfo({ userId: result.$id });
+
         return parseStringify(user);
     } catch (error) {
-        console.error('AUTH_ERROR : ', error);
+        console.log(error);
+        return null;
     }
 }
 

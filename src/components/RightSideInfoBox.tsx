@@ -16,7 +16,7 @@ const RightSideInfoBox: FunctionComponent<RightSidebarProps> = ({
                 <div className="profile">
                     <div className="profile-img">
                         <span className="text-5xl font-bold text-blue-500">
-                            {user?.firstName.toUpperCase()}
+                            {user?.firstName[0].toUpperCase()}
                         </span>
                     </div>
                     <div className="profile-details">

@@ -7,6 +7,7 @@ import React, { FunctionComponent } from 'react';
 import { sidebarLinks } from '../constants';
 import { cn } from '../lib/utils';
 import BottomNav from './BottomNav';
+import PlaidLinkAccount from './PlaidLinkAccount';
 
 const SideNav: FunctionComponent<SidebarProps> = ({ user }) => {
     const pathName = usePathname();
@@ -59,7 +60,9 @@ const SideNav: FunctionComponent<SidebarProps> = ({ user }) => {
                         </Link>
                     );
                 })}
+                <PlaidLinkAccount user={user} />
             </nav>
+
             <BottomNav user={user} />
         </section>
     );

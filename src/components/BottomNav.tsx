@@ -24,7 +24,7 @@ const BottomNav: React.FunctionComponent<FooterProps> = ({
                 }
             >
                 <p className="text-xl font-bold text-gray-700">
-                    {user?.name[0]}
+                    {user?.firstName[0]}
                 </p>
             </div>
             <div
@@ -33,7 +33,7 @@ const BottomNav: React.FunctionComponent<FooterProps> = ({
                 }
             >
                 <h1 className="text-14 truncate font-semibold text-gray-700">
-                    {user?.name}
+                    {user?.firstName}&nbsp;{user.lastName}
                 </h1>
                 <p className="text-14 truncate font-normal text-gray-600">
                     {user?.email}
