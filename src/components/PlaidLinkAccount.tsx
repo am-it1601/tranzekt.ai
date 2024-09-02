@@ -2,16 +2,9 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React, { useCallback, useEffect, useState } from 'react';
-import {
-    PlaidLinkOnSuccess,
-    PlaidLinkOptions,
-    usePlaidLink,
-} from 'react-plaid-link';
+import { PlaidLinkOnSuccess, PlaidLinkOptions, usePlaidLink } from 'react-plaid-link';
 
-import {
-    createLinkToken,
-    exchangePublicToken,
-} from '../lib/actions/plaid.actions';
+import { createLinkToken, exchangePublicToken } from '../lib/actions/plaid.actions';
 import { Button } from './ui/button';
 
 const PlaidLinkAccount: React.FunctionComponent<PlaidLinkProps> = ({
@@ -28,7 +21,7 @@ const PlaidLinkAccount: React.FunctionComponent<PlaidLinkProps> = ({
 
             router.push('/');
         },
-        [user]
+        [user, router]
     );
 
     const [token, setToken] = useState('');

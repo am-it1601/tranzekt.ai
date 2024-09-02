@@ -126,10 +126,10 @@ export async function getLoggedInUser() {
 
         const user = await getUserInfo({ userId: result.$id });
 
-        return parseStringify(user);
+        return parseStringify(user) as User;
     } catch (error) {
         console.log(error);
-        return null;
+        return undefined;
     }
 }
 

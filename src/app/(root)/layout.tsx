@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import SideNav from '@/components/SideNav';
 
@@ -11,6 +12,9 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     const loggedInUser = await getLoggedInUser();
+    if (!loggedInUser) {
+        return null;
+    }
 
     return (
         <main className="flex h-screen w-full font-inter">
