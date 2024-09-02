@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React, { FunctionComponent } from 'react';
 
 import { formatAmount } from '../lib/utils';
+import Copy from './Copy';
 
 const CreditCard: FunctionComponent<CreditCardProps> = ({
     userName,
@@ -64,6 +65,7 @@ const CreditCard: FunctionComponent<CreditCardProps> = ({
                     className="absolute top-0 left-0"
                 />
             </Link>
+            {showBalance && <Copy title={account?.sharableId} />}
         </div>
     );
 };
