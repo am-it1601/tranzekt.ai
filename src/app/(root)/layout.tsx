@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { redirect } from 'next/navigation';
 
 import SideNav from '@/components/SideNav';
 
@@ -13,7 +13,7 @@ export default async function RootLayout({
 }>) {
     const loggedInUser = await getLoggedInUser();
     if (!loggedInUser) {
-        return null;
+        redirect('/sign-in');
     }
 
     return (
