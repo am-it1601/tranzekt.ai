@@ -11,8 +11,8 @@ const TransactionHistory = async ({
 }: SearchParamProps) => {
     const currentPage = Number(page as string) || 1;
     const loggedInUser = await getLoggedInUser();
-    const accounts =
-        loggedInUser && (await getAccounts({ userId: loggedInUser.$id }));
+
+    const accounts = await getAccounts({ userId: loggedInUser!.$id });
 
     if (!accounts) return;
 
@@ -20,6 +20,7 @@ const TransactionHistory = async ({
     const appwriteItemId = (id as string) || accountData[0]?.appwriteItemId;
     const account = await getAccount({ appwriteItemId });
 
+    console.log(account);
     return (
         <div className="transactions">
             <div className="transactions-header">

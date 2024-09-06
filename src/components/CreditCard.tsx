@@ -4,6 +4,7 @@ import React, { FunctionComponent } from 'react';
 
 import { formatAmount } from '../lib/utils';
 import Copy from './Copy';
+import { Separator } from './ui/separator';
 
 const CreditCard: FunctionComponent<CreditCardProps> = ({
     userName,
@@ -14,7 +15,7 @@ const CreditCard: FunctionComponent<CreditCardProps> = ({
         <div className="flex flex-col">
             <Link
                 href={`/transaction-history/?id=${account.appwriteItemId}`}
-                className="bank-card min-w-[320px]"
+                className="bank-card min-w-[300px]"
             >
                 <div className="bank-card_content">
                     <div>

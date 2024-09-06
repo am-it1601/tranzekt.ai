@@ -15,7 +15,13 @@ import { decryptId } from '../lib/utils';
 import { BankDropdown } from './BankDropdown';
 import { Button } from './ui/button';
 import {
-    Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage
+    Form,
+    FormControl,
+    FormDescription,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
 } from './ui/form';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -238,7 +244,11 @@ const FundTransferForm: React.FC<PaymentTransferFormProps> = ({ accounts }) => {
                 />
 
                 <div className="payment-transfer_btn-box">
-                    <Button type="submit" className="payment-transfer_btn">
+                    <Button
+                        type="submit"
+                        className="payment-transfer_btn"
+                        disabled={isLoading}
+                    >
                         {isLoading ? (
                             <>
                                 <Loader2 size={20} className="animate-spin" />{' '}

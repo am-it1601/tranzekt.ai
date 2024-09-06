@@ -150,7 +150,10 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
             (transferData: Transaction) => ({
                 id: transferData.$id,
                 name: transferData.name!,
-                amount: transferData.amount!,
+                amount:
+                    transferData.senderBankId === bank.$id
+                        ? transferData.amount! * -1
+                        : transferData.amount!,
                 date: transferData.$createdAt,
                 paymentChannel: transferData.channel,
                 category: transferData.category,
@@ -267,6 +270,6 @@ export const getBankByAccountId = async ({
 
         return parseStringify(bank.documents[0]);
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 };

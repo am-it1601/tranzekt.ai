@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import BankInfo from './BankInfo';
 import { BankTabItem } from './BankTabItem';
+import { Pagination } from './Pagination';
 import TransactionsTable from './TransactionsTable';
 
 const RecentTransaction: React.FC<RecentTransactionsProps> = ({
@@ -13,6 +14,15 @@ const RecentTransaction: React.FC<RecentTransactionsProps> = ({
     appwriteItemId,
     page = 1,
 }) => {
+    const rowsPerPage = 10;
+    const totalPages = Math.ceil(transactions.length / rowsPerPage);
+    const indexOfLastTransaction = page * rowsPerPage;
+    const firstTransactionIndex = indexOfLastTransaction - rowsPerPage;
+    const currentTransactions = transactions.slice(
+        firstTransactionIndex,
+        indexOfLastTransaction
+    );
+
     return (
         <section className="recent-transactions">
             <header className="flex items-center justify-between">
@@ -52,7 +62,8 @@ const RecentTransaction: React.FC<RecentTransactionsProps> = ({
                             appwriteItemId={appwriteItemId}
                             type="full"
                         />
-                        <TransactionsTable transactions={transactions} />
+                        <TransactionsTable transactions={currentTransactions} />
+                        <Pagination totalPages={totalPages} page={page} />
                     </TabsContent>
                 ))}
             </Tabs>

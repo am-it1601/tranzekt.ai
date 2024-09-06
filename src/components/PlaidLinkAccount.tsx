@@ -33,7 +33,6 @@ const PlaidLinkAccount: React.FunctionComponent<PlaidLinkProps> = ({
     useEffect(() => {
         const getLinkToken = async () => {
             const data = await createLinkToken(user);
-            console.log(data);
             setToken(data?.token);
         };
         getLinkToken();

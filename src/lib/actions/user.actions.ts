@@ -128,8 +128,8 @@ export async function getLoggedInUser() {
 
         return parseStringify(user) as User;
     } catch (error) {
-        console.log(error);
-        return undefined;
+        console.error(error);
+        return null;
     }
 }
 

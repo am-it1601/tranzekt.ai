@@ -1,8 +1,15 @@
 import _ from 'lodash';
+import moment from 'moment';
 import React from 'react';
 
 import {
-    Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
 } from '@/components/ui/table';
 
 import { transactionCategoryStyles } from '../constants';
@@ -62,7 +69,11 @@ const TransactionsTable: React.FC<TransactionTableProps> = ({
                         >
                             <TableCell className="pl-2 pr-10 min-w-40">
                                 <div>
-                                    <h1>{singLeTransaction.date}</h1>
+                                    <h1>
+                                        {moment(singLeTransaction.date).format(
+                                            'YYYY, MMM DD'
+                                        )}
+                                    </h1>
                                 </div>
                             </TableCell>
                             <TableCell className="max-w-[250px] pl-2 pr-10">
