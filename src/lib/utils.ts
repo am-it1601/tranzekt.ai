@@ -193,3 +193,4 @@ export const getTransactionStatus = (date: Date) => {
 
     return date > twoDaysAgo ? 'Processing' : 'Success';
 };
+
