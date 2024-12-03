@@ -11,7 +11,8 @@ import {
 } from '@/components/ui/select';
 
 import AccountForm from '@/components/AccountForm';
-
+import {AreaChartStaked} from '@/components/AreaChartStaked'
+import { BarChartDouble } from '@/components/BarChartDouble';
 
 
 const page = () => {
@@ -24,12 +25,12 @@ const page = () => {
 
             {/* Select account type  */}
 
-            <div className="px-8 py-8">
+            <div className="px-8 py-6 z-40">
                 <Select>
                     <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Account Type" />
                     </SelectTrigger>
-                    <SelectContent className="focus:ring-blue-500 focus:border-blue-500 focus:outline-none">
+                    <SelectContent className="focus:ring-blue-500 bg-white focus:border-blue-500 focus:outline-none">
                         <SelectItem  value="BankAccount">
                             Bank Account
                         </SelectItem>
@@ -50,7 +51,12 @@ const page = () => {
              <div className="px-8 py-6" >
             <AccountForm />
             </div>
+            <div className='min-h-screen w-3/5'>
+            <AreaChartStaked />
+            <BarChartDouble />
+            </div>
         </div>
+        
     );
 };
 

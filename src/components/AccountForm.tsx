@@ -1,7 +1,8 @@
 "use client"
 
 import React from 'react'
-
+import { Label } from "@/components/ui/label"
+import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
 import {
   Form,
@@ -31,6 +32,8 @@ const formSchema = z.object({
 })
 
 const AccountForm = () => {
+
+    
       // 1. Define your form.
    const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,7 +53,7 @@ const AccountForm = () => {
     <section className='account-form'>
         
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
         <div className='flex gap-44'>
         <FormField
           control={form.control}
@@ -190,19 +193,28 @@ const AccountForm = () => {
                 <FormLabel className='form-label'>
                     Description
                 </FormLabel>
-                <div className='flex w-full flex-col '>
+                <div className='flex  flex-col input-class w-56 h-32 '>
                     <FormControl>
                         <input
                         placeholder='max. 500 characters'
-                        className='input-class w-56 h-32  '
+                        className='  '
                         {...field}
                         />
                     </FormControl>
+                    
 
                 </div>
+                <div>
+      <div className="flex items-center mt-2 space-x-2">
+        <Checkbox className='border-gray-500' id="terms" />
+        <Label className='text-slate-700' htmlFor="terms">Make This Primary</Label>
+      </div>
+    </div>
             </div>
           )}
         />
+        
+
         <Button type="submit" className='form-btn'>Save</Button>
         <Button type='submit' className='form-btn ml-2'>Cancel</Button>
       </form>
