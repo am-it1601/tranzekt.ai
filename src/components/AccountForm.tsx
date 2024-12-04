@@ -4,6 +4,15 @@ import React from 'react'
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Button } from "@/components/ui/button"
+import HeaderBox from '../components/HeaderBox';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
+
 import {
   Form,
   FormControl,
@@ -50,8 +59,34 @@ const AccountForm = () => {
   }
   
   return (
+    <>
+     <div className="">
+                <HeaderBox title="Add Account" subtext="" />
+            </div>
+    <div className=" py-6 z-40">
+    <Select >
+        <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Account Type" />
+        </SelectTrigger>
+        <SelectContent className="focus:ring-blue-500 bg-white focus:border-blue-500 focus:outline-none">
+            <SelectItem value="BankAccount">
+                Bank Account
+            </SelectItem>
+            <SelectItem value="CashAccount">
+                Cash Account
+            </SelectItem>
+            <SelectItem value="CreditCardAccount">
+                CreditCard Account
+            </SelectItem>
+            <SelectItem value="CheckingAccount">
+                Checking Account
+            </SelectItem>
+        </SelectContent>
+    </Select>
+</div>
+    
     <section className='account-form'>
-        
+       
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
         <div className='flex gap-44'>
@@ -216,11 +251,13 @@ const AccountForm = () => {
         
 
         <Button type="submit" className='form-btn'>Save</Button>
-        <Button type='submit' className='form-btn ml-2'>Cancel</Button>
+        {/* <Button type='submit' className='form-btn ml-2'>Cancel</Button> */}
       </form>
     </Form>
     </section>
+    </>
   )
 }
+
 
 export default AccountForm
