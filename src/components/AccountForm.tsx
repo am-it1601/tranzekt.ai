@@ -89,7 +89,7 @@ const AccountForm = () => {
        
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
-        <div className='flex gap-44'>
+        
         <FormField
           control={form.control}
           name="username"
@@ -102,7 +102,7 @@ const AccountForm = () => {
                     <FormControl>
                         <input
                         placeholder=''
-                        className='input-class'
+                        className='input-class w-56'
                         {...field}
                         />
                     </FormControl>
@@ -111,7 +111,7 @@ const AccountForm = () => {
             </div>
           )}
         />
-        <FormField
+        {/* <FormField
           control={form.control}
           name="number"
           render={({ field }) => (
@@ -131,8 +131,8 @@ const AccountForm = () => {
                 </div>
             </div>
           )}
-        /></div>
-        <div className='flex gap-44'>
+        /> */}
+
          <FormField
           control={form.control}
           name="balance"
@@ -145,7 +145,7 @@ const AccountForm = () => {
                     <FormControl>
                         <input
                         placeholder='INR'
-                        className='input-class'
+                        className='input-class w-56'
                         {...field}
                         />
                     </FormControl>
@@ -154,7 +154,7 @@ const AccountForm = () => {
             </div>
           )}
         />
-         <FormField
+         {/* <FormField
           control={form.control}
           name="accountNumber"
           render={({ field }) => (
@@ -174,10 +174,10 @@ const AccountForm = () => {
                 </div>
             </div>
           )}
-        />
-        </div>
-        <div className='flex gap-44'>
-         <FormField
+        /> */}
+        
+        
+         {/* <FormField
           control={form.control}
           name="bankName"
           render={({ field }) => (
@@ -197,8 +197,8 @@ const AccountForm = () => {
                 </div>
             </div>
           )}
-        />
-        <FormField
+        /> */}
+        {/* <FormField
           control={form.control}
           name="ifscCode"
           render={({ field }) => (
@@ -218,8 +218,8 @@ const AccountForm = () => {
                 </div>
             </div>
           )}
-        />
-        </div>
+        /> */}
+        
         <FormField
           control={form.control}
           name="description"
@@ -228,11 +228,11 @@ const AccountForm = () => {
                 <FormLabel className='form-label'>
                     Description
                 </FormLabel>
-                <div className='flex  flex-col input-class w-56 h-32 '>
+                <div className=' '>
                     <FormControl>
                         <input
-                        placeholder='max. 500 characters'
-                        className='  '
+                        placeholder=''
+                        className=' flex-col input-class w-56 h-32  '
                         {...field}
                         />
                     </FormControl>
