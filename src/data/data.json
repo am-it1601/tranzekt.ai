@@ -1,0 +1,179 @@
+[
+  {
+    "id": 1,
+    "account_name": "Sidnee Rivenzon",
+    "opening_balance": 4,
+    "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis li",
+    "account_type": "bankAccount"
+  },
+  {
+    "id": 2,
+    "account_name": "Germaine Plaister",
+    "opening_balance": 74,
+    "description": "Morbi porttitor lorem id ligula.",
+    "account_type": "cashAccount"
+  },
+  {
+    "id": 3,
+    "account_name": "Glad Hoyle",
+    "opening_balance": 53,
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "account_type": "creditCardAccount"
+  },
+  {
+    "id": 4,
+    "account_name": "Aldo Jolliff",
+    "opening_balance": 55,
+    "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibu",
+    "account_type": "cashAccount"
+  },
+  {
+    "id": 5,
+    "account_name": "Elna Collomosse",
+    "opening_balance": 62,
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+    "account_type": "bankAccount"
+  },
+  {
+    "id": 6,
+    "account_name": "Anny Hodgin",
+    "opening_balance": 30,
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "account_type": "creditCardAccount"
+  },
+  {
+    "id": 7,
+    "account_name": "Moll Cornelisse",
+    "opening_balance": 27,
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ",
+    "account_type": "bankAccount"
+  },
+  {
+    "id": 8,
+    "account_name": "Rebe Didball",
+    "opening_balance": 71,
+    "description": "Phasellus in felis. Donec semper sapien a libero. Nam dui.",
+    "account_type": "cashAccount"
+  },
+  {
+    "id": 9,
+    "account_name": "Chickie McArley",
+    "opening_balance": 16,
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "account_type": "bankAccount"
+  },
+  {
+    "id": 10,
+    "account_name": "Nerty Sisland",
+    "opening_balance": 75,
+    "description": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "account_type": "creditCardAccount"
+  },
+  {
+    "accountType": "Bank account",
+    "accountName": "rtgete",
+    "openingBalance": "555555",
+    "description": "ddfff"
+  },
+  {
+    "account_type": "Cash account",
+    "account_name": "yogesh",
+    "opening_balance": "4585541",
+    "description": "yogesh kumawat"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "346456",
+    "description": "hjnhn"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "5467663",
+    "description": "fjyrjtyj"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "bg",
+    "opening_balance": "57647",
+    "description": "drjtm"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "325346",
+    "description": "rjtyjytj"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yjtuk",
+    "opening_balance": "4747",
+    "description": "jjnhm"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "rbnn",
+    "opening_balance": "3456",
+    "description": "nghn"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "457567",
+    "description": "fghgmmj"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "43654",
+    "description": "dhhtrhhj"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "47675",
+    "description": "ryjyjj"
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "34656",
+    "description": "hryhyt"
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "4656",
+    "description": "36tmgmjm",
+    "id": 1
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "ut",
+    "opening_balance": "3647",
+    "description": "jhnjnj",
+    "id": 2
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "6565",
+    "description": "hjtyjtyj",
+    "id": 3
+  },
+  {
+    "account_type": "Checking account",
+    "account_name": "yogesh",
+    "opening_balance": "45764574",
+    "description": "jnjhmmky",
+    "id": 4
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "547578",
+    "description": "jtkmm",
+    "id": 5
+  }
+]

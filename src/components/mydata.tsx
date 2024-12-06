@@ -1,145 +1,4 @@
 // "use client"; // This makes the component a Client Component
-
-// import React, { useState } from "react";
-// import { Select, SelectTrigger, SelectContent, SelectItem, SelectLabel, SelectGroup } from '@/components/ui/select';
-// import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-
-// type AccountType = "Bank" | "Cash" | "Credit Card" | "Checking";
-
-// interface Account {
-//   accountType: AccountType;
-//   accountName: string;
-//   openingBalance: number;
-//   description: string;
-// }
-
-// const AccountForm = () => {
-//   const [accounts, setAccounts] = useState<Account[]>([]);
-//   const [accountType, setAccountType] = useState<AccountType>("Bank");
-//   const [accountName, setAccountName] = useState("");
-//   const [openingBalance, setOpeningBalance] = useState("");
-//   const [description, setDescription] = useState("");
-
-//   // Handle form submission
-//   const handleSubmit = (e: React.FormEvent) => {
-//     e.preventDefault();
-
-//     // Validate input
-//     if (!accountName || !openingBalance || isNaN(Number(openingBalance))) {
-//       alert("Please fill in all fields correctly");
-//       return;
-//     }
-
-//     const newAccount: Account = {
-//       accountType,
-//       accountName,
-//       openingBalance: parseFloat(openingBalance),
-//       description,
-//     };
-
-//     setAccounts((prevAccounts) => [...prevAccounts, newAccount]);
-
-//     // Reset form
-//     setAccountName("");
-//     setOpeningBalance("");
-//     setDescription("");
-//   };
-
-//   return (
-//     <div className="max-w-3xl mx-auto p-4">
-//       <h1 className="text-2xl font-semibold mb-4">Add New Account</h1>
-      
-//       {/* Account Form */}
-//       <form onSubmit={handleSubmit} className="space-y-4">
-//       <div>
-//           <label className="block text-sm font-medium">Account Type</label>
-//           <Select value={accountType} onValueChange={(value) => setAccountType(value as AccountType)}>
-//             <SelectTrigger className="w-full p-2 border rounded-md">
-//               <span>{accountType}</span>
-//             </SelectTrigger>
-//             <SelectContent>
-//               <SelectGroup>
-//                 <SelectLabel>Choose Account Type</SelectLabel>
-//                 <SelectItem value="Bank">Bank</SelectItem>
-//                 <SelectItem value="Cash">Cash</SelectItem>
-//                 <SelectItem value="Credit Card">Credit Card</SelectItem>
-//                 <SelectItem value="Checking">Checking</SelectItem>
-//               </SelectGroup>
-//             </SelectContent>
-//           </Select>
-//         </div>
-
-//         <div>
-//           <label className="block text-sm font-medium">Account Name</label>
-//           <input
-//             type="text"
-//             value={accountName}
-//             onChange={(e) => setAccountName(e.target.value)}
-//             placeholder="Enter account name"
-//             className="w-full p-2 border rounded-md"
-//           />
-//         </div>
-
-//         <div>
-//           <label className="block text-sm font-medium">Opening Balance</label>
-//           <input
-//             type="number"
-//             value={openingBalance}
-//             onChange={(e) => setOpeningBalance(e.target.value)}
-//             placeholder="Enter opening balance"
-//             className="w-full p-2 border rounded-md"
-//           />
-//         </div>
-
-//         <div>
-//           <label className="block text-sm font-medium">Description</label>
-//           <textarea
-//             value={description}
-//             onChange={(e) => setDescription(e.target.value)}
-//             placeholder="Enter account description"
-//             className="w-full p-2 border rounded-md"
-//           />
-//         </div>
-
-//         <button
-//           type="submit"
-//           className="w-full p-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200"
-//         >
-//           Add Account
-//         </button>
-//       </form>
-
-//       {/* Accounts Table
-//       <h2 className="text-xl font-semibold mt-8">Accounts List</h2>
-//       <Table className="mt-4 w-full">
-//         <TableHeader>
-//           <TableRow>
-//             <TableHead>Account Type</TableHead>
-//             <TableHead>Account Name</TableHead>
-//             <TableHead>Opening Balance</TableHead>
-//             <TableHead>Description</TableHead>
-//           </TableRow>
-//         </TableHeader>
-//         <TableBody>
-//           {accounts.map((account, index) => (
-//             <TableRow key={index}>
-//               <TableCell>{account.accountType}</TableCell>
-//               <TableCell>{account.accountName}</TableCell>
-//               <TableCell>{account.openingBalance}</TableCell>
-//               <TableCell>{account.description}</TableCell>
-//             </TableRow>
-//           ))}
-//         </TableBody>
-//       </Table> */}
-//     </div>
-//   );
-// };
-
-// export default AccountForm;
-
-
-
-// "use client"; // This makes the component a Client Component
 // import HeaderBox from '@/components/HeaderBox';
 
 // import React, { useState } from "react";
@@ -252,7 +111,8 @@
 //         </button>
 //       </form>
 
-//       Accounts Table
+//       {/* Accounts Table  */}
+      
 //       <h2 className="text-xl font-semibold mt-8">Accounts List</h2>
 //       <Table className="mt-4 w-full">
 //         <TableHeader>
@@ -284,7 +144,12 @@
 
 
 
-// // code 3rd updated 
+
+
+
+
+
+// 2nd code which fixes opening balance but now select items not working 
 
 
 
@@ -292,4 +157,165 @@
 
 
 
-// // 2nd code updated 
+// "use client";
+
+// import React, { useState } from "react";
+// import HeaderBox from "@/components/HeaderBox";
+// import { Select, SelectTrigger, SelectContent, SelectItem, SelectLabel, SelectGroup } from "@/components/ui/select";
+// import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+// import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
+// import { Input } from "@/components/ui/input";
+// import { Textarea } from "@/components/ui/textarea";
+// import { Button } from "@/components/ui/button";
+// import { useForm } from "react-hook-form";
+// import { zodResolver } from "@hookform/resolvers/zod";
+// import { z } from "zod";
+
+// // Define account types
+// type AccountType = "Bank account" | "Cash account" | "Credit Card account" | "Checking account";
+
+// // Define schema using zod
+// const AccountTypeSchema = z.enum(["Bank account", "Cash account", "Credit Card account", "Checking account"]);
+// const AccountSchema = z.object({
+//   accountType: AccountTypeSchema,
+//   accountName: z.string().min(1, "Account name is required"),
+//   openingBalance: z.string().min(1, "Opening balance is required"),
+//   description: z.string().optional(),
+// });
+
+// // Define the interface for an Account
+// interface Account {
+//   accountType: AccountType;
+//   accountName: string;
+//   openingBalance: string; // Keep it as a string in the form
+//   description: string;
+// }
+
+// const AccountForm = () => {
+//   const [accounts, setAccounts] = useState<Account[]>([]);
+
+//   // Initialize form with react-hook-form and zod resolver
+//   const form = useForm<z.infer<typeof AccountSchema>>({
+//     resolver: zodResolver(AccountSchema),
+//     defaultValues: {
+//       accountType: "Bank account",
+//       accountName: "",
+//       openingBalance: "",
+//       description: "",
+//     },
+//   });
+
+//   // Handle form submission
+//   const onSubmit = (data: any) => {
+//     const newAccount: Account = {
+//       accountType: data.accountType,
+//       accountName: data.accountName,
+//       openingBalance: data.openingBalance, // Keep this as it is from the form (string)
+//       description: data.description,
+//     };
+
+//     setAccounts((prevAccounts) => [...prevAccounts, newAccount]);
+//   };
+
+//   return (
+//     <div className="w-full mx-auto p-6">
+//       <HeaderBox title="Add New Account" subtext="" />
+//       <Form {...form}>
+//         {/* Account Form */}
+//         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 flex w-2/6 flex-col justify-center pt-0">
+//           {/* Account Type */}
+//           <FormField name="accountType" control={form.control} render={({ field }) => (
+//             <FormItem>
+//               <FormLabel>Account Type</FormLabel>
+//               <FormControl>
+//                 <Select {...field}>
+//                   <SelectTrigger className="w-full p-2 border rounded-md">
+//                     <span>{field.value || "Select an account type"}</span>
+//                   </SelectTrigger>
+//                   <SelectContent>
+//                     <SelectGroup>
+//                       <SelectLabel>Choose Account Type</SelectLabel>
+//                       <SelectItem value="Bank account">Bank Account</SelectItem>
+//                       <SelectItem value="Cash account">Cash Account</SelectItem>
+//                       <SelectItem value="Credit Card account">Credit Card Account</SelectItem>
+//                       <SelectItem value="Checking account">Checking Account</SelectItem>
+//                     </SelectGroup>
+//                   </SelectContent>
+//                 </Select>
+//               </FormControl>
+//             </FormItem>
+//           )} />
+
+//           {/* Account Name */}
+//           <FormField name="accountName" control={form.control} rules={{ required: "Account name is required" }} render={({ field }) => (
+//             <FormItem>
+//               <FormLabel>Account Name</FormLabel>
+//               <FormControl>
+//                 <Input {...field} placeholder="Enter account name" className="w-full p-2 border rounded-md" />
+//               </FormControl>
+//               <FormMessage className="form-message mt-2" />
+//             </FormItem>
+//           )} />
+
+//           {/* Opening Balance */}
+//           <FormField name="openingBalance" control={form.control} render={({ field }) => (
+//             <FormItem>
+//               <FormLabel>Opening Balance</FormLabel>
+//               <FormControl>
+//                 <Input
+//                   {...field}
+//                   type="number"
+//                   placeholder="Enter opening balance"
+//                   className="w-full p-2 border rounded-md"
+//                 />
+//               </FormControl>
+//               <FormMessage className="form-message mt-2" />
+//             </FormItem>
+//           )} />
+
+//           {/* Description */}
+//           <FormField name="description" control={form.control} render={({ field }) => (
+//             <FormItem>
+//               <FormLabel>Description</FormLabel>
+//               <FormControl>
+//                 <Textarea {...field} placeholder="Enter account description" className="w-full p-2 border rounded-md" />
+//               </FormControl>
+//             </FormItem>
+//           )} />
+
+//           {/* Submit Button */}
+//           <Button type="submit" className="w-full p-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-200">
+//             Add Account
+//           </Button>
+//         </form>
+//       </Form>
+
+//       {/* Accounts Table */}
+//       <h2 className="text-xl font-semibold mt-8">Accounts List</h2>
+//       <Table className="mt-4 w-full">
+//         <TableHeader>
+//           <TableRow>
+//             <TableHead>Account Type</TableHead>
+//             <TableHead>Account Name</TableHead>
+//             <TableHead>Opening Balance</TableHead>
+//             <TableHead>Description</TableHead>
+//           </TableRow>
+//         </TableHeader>
+//         <TableBody>
+//           {accounts.map((account, index) => (
+//             <TableRow key={index}>
+//               <TableCell>{account.accountType}</TableCell>
+//               <TableCell>{account.accountName}</TableCell>
+//               <TableCell>{account.openingBalance}</TableCell> {/* Showing the opening balance */}
+//               <TableCell>{account.description}</TableCell>
+//             </TableRow>
+//           ))}
+//         </TableBody>
+//       </Table>
+//     </div>
+//   );
+// };
+
+// export default AccountForm;
+
+

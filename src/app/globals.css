@@ -267,7 +267,7 @@
     }
 
     .header-box {
-        @apply flex flex-col gap-1;
+        @apply flex flex-col pb-2 gap-1;
     }
 
     .header-box-title {
