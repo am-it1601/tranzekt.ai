@@ -175,5 +175,26 @@
     "opening_balance": "547578",
     "description": "jtkmm",
     "id": 5
+  },
+  {
+    "account_type": "Cash account",
+    "account_name": "yogesh",
+    "opening_balance": "3465",
+    "description": "rthy",
+    "id": 6
+  },
+  {
+    "account_type": "Cash account",
+    "account_name": "yogesh",
+    "opening_balance": "14000",
+    "description": "salary",
+    "id": 7
+  },
+  {
+    "account_type": "Checking account",
+    "account_name": "yogesh kumawat",
+    "opening_balance": "454646646",
+    "description": "salary",
+    "id": 8
   }
 ]
