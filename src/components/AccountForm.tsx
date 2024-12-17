@@ -1,263 +1,202 @@
-"use client"
+'use client';
 
-import React from 'react'
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Button } from "@/components/ui/button"
-import HeaderBox from '../components/HeaderBox';
+import React, { useEffect } from 'react';
+import { useRouter, useParams } from 'next/navigation';
+import {
+    Form,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormControl,
+    FormMessage,
+} from '@/components/ui/form';
 import {
     Select,
+    SelectTrigger,
     SelectContent,
     SelectItem,
-    SelectTrigger,
-    SelectValue,
 } from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { number, z } from "zod"
-import { divide } from 'lodash'
- 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  number: z.string(),
-  balance: z.string(),
-  accountNumber: z.string(),
-  bankName: z.string(),
-  ifscCode: z.string(),
-  description: z.string()
-})
+// Validation Schema
+const AccountTypeSchema = z.enum([
+    'Bank account',
+    'Cash account',
+    'Credit Card account',
+    'Checking account',
+]);
+const AccountSchema = z.object({
+    account_type: AccountTypeSchema,
+    account_name: z.string().min(1, 'Account name is required'),
+    opening_balance: z.string().optional(),
+    description: z.string().optional(),
+});
 
-const AccountForm = () => {
+type AccountFormValues = z.infer<typeof AccountSchema>;
 
-    
-      // 1. Define your form.
-   const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
-    },
-  })
- 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
-  }
-  
-  return (
-    <>
-     <div className="">
-                <HeaderBox title="Add Account" subtext="" />
-            </div>
-    <div className=" py-6 z-40">
-    <Select >
-        <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Account Type" />
-        </SelectTrigger>
-        <SelectContent className="focus:ring-blue-500 bg-white focus:border-blue-500 focus:outline-none">
-            <SelectItem value="BankAccount">
-                Bank Account
-            </SelectItem>
-            <SelectItem value="CashAccount">
-                Cash Account
-            </SelectItem>
-            <SelectItem value="CreditCardAccount">
-                CreditCard Account
-            </SelectItem>
-            <SelectItem value="CheckingAccount">
-                Checking Account
-            </SelectItem>
-        </SelectContent>
-    </Select>
-</div>
-    
-    <section className='account-form'>
-       
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 ">
-        
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    Account Name
-                </FormLabel>
-                <div className='flex w-full flex-col '>
-                    <FormControl>
-                        <input
-                        placeholder=''
-                        className='input-class w-56'
-                        {...field}
-                        />
-                    </FormControl>
+const AccountForm = ({
+    accountData,
+    mode = 'add', // Default mode is 'add'
+}: {
+    accountData?: AccountFormValues;
+    mode?: 'add' | 'edit';
+}) => {
+    const router = useRouter();
+    const params = useParams();
+    const isEditMode = !!params.id;
 
-                </div>
-            </div>
-          )}
-        />
-        {/* <FormField
-          control={form.control}
-          name="number"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    Account Code
-                </FormLabel>
-                <div className='flex w-full flex-col '>
-                    <FormControl>
-                        <input
-                        placeholder=''
-                        className='input-class'
-                        {...field}
-                        />
-                    </FormControl>
+    // const form = useForm<AccountFormValues>({
+    //     resolver: zodResolver(AccountSchema),
+    //     defaultValues: {
+    //         account_type: 'Bank account',
+    //         account_name: '',
+    //         opening_balance: '',
+    //         description: '',
+    //     },
+    // });
+    const form = useForm<AccountFormValues>({
+        resolver: zodResolver(AccountSchema),
+        defaultValues: accountData || {
+            account_type:  'Bank account',
+            account_name: '',
+            opening_balance: '',
+            description: '',
+        },
+    });
+    // Fetch account data for edit mode
+    useEffect(() => {
+        if (isEditMode) {
+            const fetchAccount = async () => {
+                const response = await fetch(
+                    `/api/accounts/${params.id}`
+                );
+                const data = await response.json();
+                form.reset(data);
+            };
+            fetchAccount();
+        }
+    }, [isEditMode, params.id, form]);
 
-                </div>
-            </div>
-          )}
-        /> */}
+    const onSubmit = async (data: AccountFormValues) => {
+        const method = isEditMode ? 'PUT' : 'POST';
+        const url = isEditMode ? `/api/accounts/${params.id}` : '/api/accounts';
 
-         <FormField
-          control={form.control}
-          name="balance"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    Opening Balance
-                </FormLabel>
-                <div className='flex w-full flex-col '>
-                    <FormControl>
-                        <input
-                        placeholder='INR'
-                        className='input-class w-56'
-                        {...field}
-                        />
-                    </FormControl>
+        const response = await fetch(url, {
+            method,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        });
 
-                </div>
-            </div>
-          )}
-        />
-         {/* <FormField
-          control={form.control}
-          name="accountNumber"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    Account Number
-                </FormLabel>
-                <div className='flex w-full flex-col '>
-                    <FormControl>
-                        <input
-                        placeholder=''
-                        className='input-class'
-                        {...field}
-                        />
-                    </FormControl>
+        if (response.ok) {
+            router.push('/accounts');
+        } else {
+            console.error('Error saving account:', response.statusText);
+        }
+    };
 
-                </div>
-            </div>
-          )}
-        /> */}
-        
-        
-         {/* <FormField
-          control={form.control}
-          name="bankName"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    Bank Name
-                </FormLabel>
-                <div className='flex w-full flex-col '>
-                    <FormControl>
-                        <input
-                        placeholder=''
-                        className='input-class'
-                        {...field}
-                        />
-                    </FormControl>
+    return (
+        <div className="p-6 w-2/5">
+            <Form {...form}>
+                <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-4"
+                >
+                    <FormField 
+                        name="account_type"
+                        control={form.control}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Account Type</FormLabel>
+                                <FormControl>
+                                    <Select
+                                        value={field.value}
+                                        onValueChange={field.onChange}
+                                    >
+                                        <SelectTrigger>
+                                            {field.value ||
+                                                'Select account type'}
+                                        </SelectTrigger>
+                                        <SelectContent className='bg-white'>
+                                            <SelectItem value="Bank account">
+                                                Bank Account
+                                            </SelectItem>
+                                            <SelectItem value="Cash account">
+                                                Cash Account
+                                            </SelectItem>
+                                            <SelectItem value="Credit Card account">
+                                                Credit Card Account
+                                            </SelectItem>
+                                            <SelectItem value="Checking account">
+                                                Checking Account
+                                            </SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        name="account_name"
+                        control={form.control}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Account Name</FormLabel>
+                                <FormControl>
+                                    <Input
+                                        {...field}
+                                        placeholder="Enter account name"
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        name="opening_balance"
+                        control={form.control}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Opening Balance</FormLabel>
+                                <FormControl>
+                                    <Input
+                                        {...field}
+                                        type="number"
+                                        placeholder="Enter opening balance"
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        name="description"
+                        control={form.control}
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Description</FormLabel>
+                                <FormControl>
+                                    <Textarea
+                                        {...field}
+                                        placeholder="Enter description"
+                                    />
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <Button type="submit" className="bg-[#0179FE] text-white">
+                        {isEditMode ? 'Update Account' : 'Add Account'}
+                    </Button>
+                </form>
+            </Form>
+        </div>
+    );
+};
 
-                </div>
-            </div>
-          )}
-        /> */}
-        {/* <FormField
-          control={form.control}
-          name="ifscCode"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    IFSC
-                </FormLabel>
-                <div className='flex w-full flex-col '>
-                    <FormControl>
-                        <input
-                        placeholder=''
-                        className='input-class'
-                        {...field}
-                        />
-                    </FormControl>
-
-                </div>
-            </div>
-          )}
-        /> */}
-        
-        <FormField
-          control={form.control}
-          name="description"
-          render={({ field }) => (
-            <div className="form-item">
-                <FormLabel className='form-label'>
-                    Description
-                </FormLabel>
-                <div className=' '>
-                    <FormControl>
-                        <input
-                        placeholder=''
-                        className=' flex-col input-class w-56 h-32  '
-                        {...field}
-                        />
-                    </FormControl>
-                    
-
-                </div>
-                <div>
-      <div className="flex items-center mt-2 space-x-2">
-        <Checkbox className='border-gray-500' id="terms" />
-        <Label className='text-slate-700' htmlFor="terms">Make This Primary</Label>
-      </div>
-    </div>
-            </div>
-          )}
-        />
-        
-
-        <Button type="submit" className='form-btn'>Save</Button>
-        {/* <Button type='submit' className='form-btn ml-2'>Cancel</Button> */}
-      </form>
-    </Form>
-    </section>
-    </>
-  )
-}
-
-
-export default AccountForm
+export default AccountForm;

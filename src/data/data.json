@@ -2,16 +2,16 @@
   {
     "id": 1,
     "account_name": "Sidnee Rivenzon",
-    "opening_balance": 4,
+    "opening_balance": "4444333",
     "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis li",
-    "account_type": "bankAccount"
+    "account_type": "Cash account"
   },
   {
     "id": 2,
     "account_name": "Germaine Plaister",
-    "opening_balance": 74,
+    "opening_balance": "743",
     "description": "Morbi porttitor lorem id ligula.",
-    "account_type": "cashAccount"
+    "account_type": "Checking account"
   },
   {
     "id": 3,
@@ -196,5 +196,117 @@
     "opening_balance": "454646646",
     "description": "salary",
     "id": 8
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "weewt",
+    "opening_balance": "34536",
+    "description": "ehtrhrhrt",
+    "id": 9
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "6666666666666",
+    "description": "66666666666666666",
+    "id": 10
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "22222222222222",
+    "description": "33333333333333333",
+    "id": 11
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "ut",
+    "opening_balance": "77",
+    "description": "33",
+    "id": 12
+  },
+  {
+    "account_type": "Cash account",
+    "account_name": "yogesh",
+    "opening_balance": "1111111111111111",
+    "description": "111111111111111111",
+    "id": 13
+  },
+  {
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": "",
+    "description": "",
+    "id": 14
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "1111111111",
+    "description": "eeeeee",
+    "id": 15
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "23534545",
+    "description": "wgregeg",
+    "id": 16
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "3424",
+    "description": "34324",
+    "id": 17
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "3424",
+    "description": "34324",
+    "id": 18
+  },
+  {
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "3424",
+    "description": "34324",
+    "id": 19
+  },
+  {
+    "id": 1734414916412,
+    "account_type": "Cash account",
+    "account_name": "yogesh",
+    "opening_balance": "42553",
+    "description": "346346"
+  },
+  {
+    "id": 1734414936431,
+    "account_type": "Checking account",
+    "account_name": "yogesh kumawat ioih",
+    "opening_balance": "55555555555",
+    "description": "55555555555555"
+  },
+  {
+    "id": 1734419675150,
+    "account_type": "Checking account",
+    "account_name": "kunal",
+    "opening_balance": "9999999999999",
+    "description": "pese ki kami nhi hai"
+  },
+  {
+    "id": 1734421002147,
+    "account_type": "Bank account",
+    "account_name": "babulal",
+    "opening_balance": "1",
+    "description": "pese  hai pr dunga nhi"
+  },
+  {
+    "id": 1734437370917,
+    "account_type": "Credit Card account",
+    "account_name": "yogesh",
+    "opening_balance": "3333",
+    "description": "3333 3333333"
   }
 ]

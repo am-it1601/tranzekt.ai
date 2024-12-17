@@ -519,3 +519,249 @@
 // };
 
 // export default Page;
+
+
+
+
+// previous code of pagetsx table 
+
+
+// 'use client';
+// import React from 'react';
+// import { useRouter } from 'next/navigation';
+// import {
+//     Table,
+//     TableBody,
+//     TableCell,
+//     TableHead,
+//     TableHeader,
+//     TableRow,
+// } from '@/components/ui/table';
+// import accountData from '@/data/data.json';
+
+// // import { AreaChartStaked } from '@/components/AreaChartStaked';
+// // import { BarChartDouble } from '@/components/BarChartDouble';
+// // import AccountsTable from '@/components/AccountsTable';
+// import { Plus } from 'lucide-react';
+// import { Button } from '@/components/ui/button';
+// const page = () => {
+//     const router = useRouter();
+//     const navigateToAdd = () => {
+//         router.push('/accounts/Add');
+//     };
+
+//     return (
+//         <>
+//             {' '}
+//             {/* Form  */}
+//             <div className="p-4 mt-3 text-right pr-6">
+//                 <Button
+//                     onClick={navigateToAdd}
+//                     className="bg-[#0179FE] font-medium text-white"
+//                 >
+//                     <Plus /> Add Account
+//                 </Button>
+//             </div>
+//             <div className="h-auto px-6 w-full">
+//                 <h2 className="text-xl font-semibold mt-8">Accounts List</h2>
+//                 <Table className="mt-4 w-full">
+//                     <TableHeader className="bg-[#0179FE] text-white">
+//                         <TableRow>
+//                             <TableHead>Account Type</TableHead>
+//                             <TableHead>Account Name</TableHead>
+//                             <TableHead>Opening Balance</TableHead>
+//                             <TableHead>Description</TableHead>
+//                         </TableRow>
+//                     </TableHeader>
+//                     <TableBody>
+//                         {accountData.map((account, index) => (
+//                             <TableRow key={index}>
+//                                 <TableCell>{account.account_type}</TableCell>
+//                                 <TableCell>{account.account_name}</TableCell>
+//                                 <TableCell>{account.opening_balance}</TableCell>
+//                                 <TableCell>{account.description}</TableCell>
+//                             </TableRow>
+//                         ))}
+//                     </TableBody>
+//                 </Table>
+//                 {/* <AreaChartStaked />
+//                 <BarChartDouble /> */}
+//                 {/* <AccountsTable />  */}
+//             </div>
+//         </>
+//     );
+// };
+
+// export default page;
+
+
+
+
+
+
+// hey, i have 2 pages in my nextjs project in which i am making add account section in which i made a 1 table list and above table list i made one button of add account form. in which i fill some details like account type , account name , opening balance, and description and by filling these information whenn i submit or save deatils. its further shown in table list as a record . and after these i made a update button in following table list . on which whenenver i click on button update section is opened below table list record in which i can edit follwing details like account type , account name , opening balance, description. now chatgpt i dont want to open the update section below table list record . i want to open it in same form which i used in making add account form. from which i can use same form for adding accounts and update or edit section area
+
+
+
+
+
+
+
+// const onSubmit = async (data: any) => {
+//     try {
+//         // Send a POST request to the API route with form data
+//         const response = await fetch('/api', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//             },
+
+//             body: JSON.stringify(data), // Send the form data as JSON
+//         });
+
+//         if (response.ok) {
+//             const result = await response.json();
+//             console.log(result.message); // You can use this message in your UI (e.g., show a success popup)
+
+//             // Optionally reset the form
+//             form.reset();
+
+//             router.push('/accounts');
+//         } else {
+//             console.error('Failed to save account:', response.statusText);
+//         }
+//     } catch (error) {
+//         console.error('Error submitting form:', error);
+//     }
+
+//     // setAccounts((prevAccounts) => [...prevAccounts, newAccount]);
+//     // setIsModalOpen(true);
+// };
+
+
+
+// const AccountForm = ({ mode, initialData, onSave, onCancel }: { 
+//     mode: 'add' | 'edit'; 
+//     initialData?: Account; 
+//     onSave: (data: Account) => void; 
+//     onCancel?: () => void; 
+// }) => {
+//     const router = useRouter();
+
+//     const form = useForm<z.infer<typeof AccountSchema>>({
+//         resolver: zodResolver(AccountSchema),
+//         defaultValues: initialData || {
+//             account_type: 'Bank account',
+//             account_name: '',
+//             opening_balance: '',
+//             description: '',
+//         },
+//     });
+
+//     const onSubmit = (data: z.infer<typeof AccountSchema>) => {
+//         if (mode === 'edit') {
+//             // Call update logic
+//             onSave(data);
+//         } else {
+//             // Call create logic
+//             onSave(data);
+//         }
+//     };
+
+//     return (
+//         <div className="w-full mx-auto p-6">
+//             <HeaderBox title={mode === 'edit' ? 'Edit Account' : 'Add New Account'} subtext="" />
+//             <Form {...form}>
+//                 <form
+//                     onSubmit={form.handleSubmit(onSubmit)}
+//                     className="space-y-4 flex w-2/6 flex-col justify-center pt-0"
+//                 >
+//                     {/* Account Type */}
+//                     <FormField
+//                         name="account_type"
+//                         control={form.control}
+//                         render={({ field }) => (
+//                             <FormItem>
+//                                 <FormLabel>Account Type</FormLabel>
+//                                 <FormControl>
+//                                     <Select
+//                                         {...field}
+//                                         onValueChange={(value) => field.onChange(value)}
+//                                     >
+//                                         <SelectTrigger className="w-full p-2 border rounded-md">
+//                                             <span>{field.value || 'Select an account type'}</span>
+//                                         </SelectTrigger>
+//                                         <SelectContent>
+//                                             <SelectGroup>
+//                                                 <SelectLabel>Choose Account Type</SelectLabel>
+//                                                 <SelectItem value="Bank account">Bank Account</SelectItem>
+//                                                 <SelectItem value="Cash account">Cash Account</SelectItem>
+//                                                 <SelectItem value="Credit Card account">Credit Card Account</SelectItem>
+//                                                 <SelectItem value="Checking account">Checking Account</SelectItem>
+//                                             </SelectGroup>
+//                                         </SelectContent>
+//                                     </Select>
+//                                 </FormControl>
+//                             </FormItem>
+//                         )}
+//                     />
+
+//                     {/* Account Name */}
+//                     <FormField
+//                         name="account_name"
+//                         control={form.control}
+//                         render={({ field }) => (
+//                             <FormItem>
+//                                 <FormLabel>Account Name</FormLabel>
+//                                 <FormControl>
+//                                     <Input {...field} placeholder="Enter account name" />
+//                                 </FormControl>
+//                                 <FormMessage />
+//                             </FormItem>
+//                         )}
+//                     />
+
+//                     {/* Opening Balance */}
+//                     <FormField
+//                         name="opening_balance"
+//                         control={form.control}
+//                         render={({ field }) => (
+//                             <FormItem>
+//                                 <FormLabel>Opening Balance</FormLabel>
+//                                 <FormControl>
+//                                     <Input {...field} type="number" placeholder="Enter opening balance" />
+//                                 </FormControl>
+//                                 <FormMessage />
+//                             </FormItem>
+//                         )}
+//                     />
+
+//                     {/* Description */}
+//                     <FormField
+//                         name="description"
+//                         control={form.control}
+//                         render={({ field }) => (
+//                             <FormItem>
+//                                 <FormLabel>Description</FormLabel>
+//                                 <FormControl>
+//                                     <Textarea {...field} placeholder="Enter account description" />
+//                                 </FormControl>
+//                             </FormItem>
+//                         )}
+//                     />
+
+//                     {/* Submit Button */}
+//                     <Button type="submit" className="w-full bg-blue-600 text-white rounded-md hover:bg-blue-700">
+//                         {mode === 'edit' ? 'Update Account' : 'Add Account'}
+//                     </Button>
+
+//                     {onCancel && (
+//                         <Button type="button" className="w-full mt-2 bg-gray-300 text-black rounded-md" onClick={onCancel}>
+//                             Cancel
+//                         </Button>
+//                     )}
+//                 </form>
+//             </Form>
+//         </div>
+//     );
+// };
