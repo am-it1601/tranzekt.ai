@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Edit3 } from 'lucide-react';
-import TransactionsTable from '@/components/TransactionsTable';
+import TransactionsTable from '@/components/fearures/Transactions/TransactionsTable'; // Import TransactionsTable component
 
 interface Account {
     account_name: string;
@@ -29,7 +29,7 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
     };
 
     return (
-        <div className="container mx-auto p-6">
+        <div className="container bg-gray-25  mx-auto p-6 ">
             {/* Account Details Section */}
             <div className="border rounded-lg p-6 bg-[#0179FE] shadow space-y-4">
                 <div className="flex justify-between  items-start">
@@ -60,10 +60,10 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
                 </div>
             </div>
 
-            {/* Transactions Section */}
-            <section className="mt-6">
+             {/* Transactions Section */}
+             <section className="mt-6">
                 <h2 className="text-xl font-semibold mb-4">Recent Transactions</h2>
-                <TransactionsTable transactions={account?.transactions} />
+                <TransactionsTable />
             </section>
 
             {/* Cancel Button */}
