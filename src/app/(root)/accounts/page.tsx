@@ -1,22 +1,33 @@
-'use client';
 
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-
+import { getAccounts } from '@/lib/accounts';
 import { Button } from '@/components/ui/button';
-import { Plus, Edit3 } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import AccountsTable from '@/components/fearures/accounts/AccountsTable';
+import Link from 'next/link';
 
+interface Account {
+    id: number;
+    account_name: string;
+    account_type: string;
+    opening_balance: number;
+    description: string;
+}
 
+// Server-side Component
+const Page = async () => {
+    let accounts: Account[] = [];
 
+    try {
+        accounts = await getAccounts(); // Fetch accounts directly on the server
 
+    
+    } catch (error) {
+        console.error('Error fetching accounts:', error);
+    }
 
-const Page = () => {
-    const router = useRouter();
-
-    const navigateToAdd = () => {
-        router.push('/accounts/Add');
-    };
+    // const navigateToAdd = () => {
+    //     window.location.href = '/accounts/Add';
+    // };
 
     return (
         <div className="transactions">
@@ -26,17 +37,16 @@ const Page = () => {
                     <h1 className="text-2xl font-bold text-gray-800">Accounts Overview</h1>
                     <p className="text-sm text-gray-500">Manage your bank accounts, balances, and details effortlessly.</p>
                 </div>
-                <Button
-                    onClick={navigateToAdd}
-                    className="bg-[#0179FE] text-white"
-                >
+                    <Link href='/accounts/Add'> 
+                <Button  className="bg-[#0179FE] text-white">
                     <Plus className="mr-2" /> Add Account
                 </Button>
+                    </Link>
             </div>
 
             {/* Accounts Table Section */}
-            <section className="flex w-full flex-col gap-6">
-                <AccountsTable />
+            <section className="">
+                <AccountsTable accounts={accounts} />
             </section>
         </div>
     );
