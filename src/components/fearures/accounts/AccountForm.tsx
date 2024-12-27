@@ -50,31 +50,20 @@ const AccountForm = ({
     const params = useParams();
     const isEditMode = !!params.id;
 
-    // const form = useForm<AccountFormValues>({
-    //     resolver: zodResolver(AccountSchema),
-    //     defaultValues: {
-    //         account_type: 'Bank account',
-    //         account_name: '',
-    //         opening_balance: '',
-    //         description: '',
-    //     },
-    // });
     const form = useForm<AccountFormValues>({
         resolver: zodResolver(AccountSchema),
         defaultValues: accountData || {
-            account_type:  'Bank account',
+            account_type: 'Bank account',
             account_name: '',
             opening_balance: '',
             description: '',
         },
     });
-    // Fetch account data for edit mode
+
     useEffect(() => {
         if (isEditMode) {
             const fetchAccount = async () => {
-                const response = await fetch(
-                    `/api/accounts/${params.id}`
-                );
+                const response = await fetch(`/api/accounts/${params.id}`);
                 const data = await response.json();
                 form.reset(data);
             };
@@ -101,155 +90,140 @@ const AccountForm = ({
 
     return (
         <div className="p-8 max-w-4xl mx-auto bg-white rounded-lg shadow-sm">
-    <Form {...form}>
-        <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-8"
-        >
-            {/* Form Title */}
-            <h2 className="text-2xl font-semibold text-[#0179FE]">
-                {isEditMode ? 'Edit Account' : 'Create New Account'}
-            </h2>
-
-            {/* Form Fields */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Account Type */}
-                <FormField
-    name="account_type"
-    control={form.control}
-    render={({ field }) => (
-        <FormItem>
-            <FormLabel className="text-gray-700 font-semibold">
-                Account Type
-            </FormLabel>
-            <FormControl>
-                <Select
-                    value={field.value}
-                    onValueChange={field.onChange}
-                    disabled={isEditMode} // Disable in edit mode
+            <Form {...form}>
+                <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-8"
                 >
-                    <SelectTrigger
-                        className={`bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE] ${
-                            isEditMode ? 'cursor-not-allowed bg-gray-100' : ''
-                        }`}
-                    >
-                        {field.value || 'Select account type'}
-                    </SelectTrigger>
-                    {!isEditMode && (
-                        <SelectContent className="bg-white">
-                            <SelectItem value="Bank account">
-                                Bank Account
-                            </SelectItem>
-                            <SelectItem value="Cash account">
-                                Cash Account
-                            </SelectItem>
-                            <SelectItem value="Credit Card account">
-                                Credit Card Account
-                            </SelectItem>
-                            <SelectItem value="Checking account">
-                                Checking Account
-                            </SelectItem>
-                        </SelectContent>
-                    )}
-                </Select>
-            </FormControl>
-            <FormMessage />
-        </FormItem>
-    )}
-/>
+                    <h2 className="text-2xl font-semibold text-[#0179FE]">
+                        {isEditMode ? 'Edit Account' : 'Create New Account'}
+                    </h2>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <FormField
+                            name="account_type"
+                            control={form.control}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-gray-700 font-semibold">
+                                        Account Type
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Select
+                                            value={field.value}
+                                            onValueChange={field.onChange}
+                                            disabled={isEditMode}
+                                        >
+                                            <SelectTrigger
+                                                className={`bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE] ${isEditMode ? 'cursor-not-allowed bg-gray-100' : ''}`}
+                                            >
+                                                {field.value ||
+                                                    'Select account type'}
+                                            </SelectTrigger>
+                                            {!isEditMode && (
+                                                <SelectContent className="bg-white">
+                                                    <SelectItem value="Bank account">
+                                                        Bank Account
+                                                    </SelectItem>
+                                                    <SelectItem value="Cash account">
+                                                        Cash Account
+                                                    </SelectItem>
+                                                    <SelectItem value="Credit Card account">
+                                                        Credit Card Account
+                                                    </SelectItem>
+                                                    <SelectItem value="Checking account">
+                                                        Checking Account
+                                                    </SelectItem>
+                                                </SelectContent>
+                                            )}
+                                        </Select>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
 
-                {/* Account Name */}
-                <FormField
-                    name="account_name"
-                    control={form.control}
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel className="text-gray-700 font-semibold">
-                                Account Name
-                            </FormLabel>
-                            <FormControl>
-                                <Input
-                                    {...field}
-                                    className="w-full bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE]"
-                                    placeholder="Enter account name"
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                        <FormField
+                            name="account_name"
+                            control={form.control}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-gray-700 font-semibold">
+                                        Account Name
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            {...field}
+                                            className="w-full bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE]"
+                                            placeholder="Enter account name"
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
 
-                {/* Opening Balance */}
-                <FormField
-    name="opening_balance"
-    control={form.control}
-    render={({ field }) => (
-        <FormItem>
-            <FormLabel className="text-gray-700 font-semibold">
-                Opening Balance
-            </FormLabel>
-            <FormControl>
-                <Input
-                    {...field}
-                    type="number"
-                    className={`w-full bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE] ${
-                        isEditMode ? 'cursor-not-allowed bg-gray-100' : ''
-                    }`}
-                    placeholder="Enter opening balance"
-                    disabled={isEditMode} // Disable in edit mode
-                />
-            </FormControl>
-            <FormMessage />
-        </FormItem>
-    )}
-/>
+                        <FormField
+                            name="opening_balance"
+                            control={form.control}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-gray-700 font-semibold">
+                                        Opening Balance
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            {...field}
+                                            type="number"
+                                            className={`w-full bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE] ${isEditMode ? 'cursor-not-allowed bg-gray-100' : ''}`}
+                                            placeholder="Enter opening balance"
+                                            disabled={isEditMode}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
 
-                {/* Description */}
-                <FormField
-                    name="description"
-                    control={form.control}
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel className="text-gray-700 font-semibold">
-                                Description
-                            </FormLabel>
-                            <FormControl>
-                                <Textarea
-                                    {...field}
-                                    className="w-full bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE]"
-                                    placeholder="Enter description"
-                                />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
-            </div>
+                        <FormField
+                            name="description"
+                            control={form.control}
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-gray-700 font-semibold">
+                                        Description
+                                    </FormLabel>
+                                    <FormControl>
+                                        <Textarea
+                                            {...field}
+                                            className="w-full bg-gray-50 border border-gray-300 rounded-md text-gray-700 focus:ring-2 focus:ring-[#0179FE]"
+                                            placeholder="Enter description"
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
 
-            {/* Submit Button */}
-            <div className="flex gap-x-4 justify-start">
-                <Button
-                    type="submit"
-                    className="bg-[#0179FE] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#005bb5] focus:ring-2 focus:ring-offset-2 focus:ring-[#0179FE]"
-                >
-                    {isEditMode ? 'Update Account' : 'Add Account'}
-                </Button>
-                <Button
-                    type="button"
-                    onClick={() => router.push('/accounts')}
-                    className="bg-[#F9FAFB] text-gray-700 px-6 py-3 rounded-md font-semibold hover:bg-[#EAECF0] border border-[#EAECF0] focus:ring-2 focus:ring-offset-2 focus:ring-[#EAECF0]"
-                >
-                    Cancel
-                </Button>
-            </div>
-        </form>
-    </Form>
-</div>
-
-    
-
-
+                    <div className="flex gap-x-4 justify-start">
+                        <Button
+                            type="submit"
+                            className="bg-[#0179FE] text-white px-6 py-3 rounded-md font-semibold hover:bg-[#005bb5] focus:ring-2 focus:ring-offset-2 focus:ring-[#0179FE]"
+                        >
+                            {isEditMode ? 'Update Account' : 'Add Account'}
+                        </Button>
+                        <Button
+                            type="button"
+                            onClick={() => router.push('/accounts')}
+                            className="bg-[#F9FAFB] text-gray-700 px-6 py-3 rounded-md font-semibold hover:bg-[#EAECF0] border border-[#EAECF0] focus:ring-2 focus:ring-offset-2 focus:ring-[#EAECF0]"
+                        >
+                            Cancel
+                        </Button>
+                    </div>
+                </form>
+            </Form>
+        </div>
     );
 };
 

@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Edit3 } from 'lucide-react';
@@ -34,7 +33,9 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
             <div className="border rounded-lg p-6 bg-[#0179FE] shadow space-y-4">
                 <div className="flex justify-between  items-start">
                     <div>
-                        <h1 className="text-2xl text-white font-bold">{account.account_name}</h1>
+                        <h1 className="text-2xl text-white font-bold">
+                            {account.account_name}
+                        </h1>
                         <p className="text-gray-100">{account.description}</p>
                     </div>
                     <button
@@ -50,19 +51,27 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
                 {/* Account Details */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <h2 className="text-lg font-semibold text-white">Account Type</h2>
+                        <h2 className="text-lg font-semibold text-white">
+                            Account Type
+                        </h2>
                         <p className="text-gray-100">{account.account_type}</p>
                     </div>
                     <div>
-                        <h2 className="text-lg font-semibold text-white">Opening Balance</h2>
-                        <p className="text-gray-100">{account.opening_balance}</p>
+                        <h2 className="text-lg font-semibold text-white">
+                            Opening Balance
+                        </h2>
+                        <p className="text-gray-100">
+                            {account.opening_balance}
+                        </p>
                     </div>
                 </div>
             </div>
 
-             {/* Transactions Section */}
-             <section className="mt-6">
-                <h2 className="text-xl font-semibold mb-4">Recent Transactions</h2>
+            {/* Transactions Section */}
+            <section className="mt-6">
+                <h2 className="text-xl font-semibold mb-4">
+                    Recent Transactions
+                </h2>
                 <TransactionsTable />
             </section>
 

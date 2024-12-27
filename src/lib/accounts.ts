@@ -30,15 +30,23 @@ export const getAccounts = async () => {
 };
 
 // Fetch a single account by ID
-export const getAccountById = async (id: number) => {
-    try {
-        const data = readData();
-        return data.find((account: any) => account.id === id);
-    } catch (error) {
-        console.error('Failed to fetch account:', error);
-        throw new Error('Failed to fetch account');
-    }
-};
+export async function getAccountById(id: string | number) {
+    const accounts = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    const numericId = typeof id === 'string' ? parseInt(id, 10) : id; // Convert if needed
+    return accounts.find((acc: any) => acc.id === numericId);
+}
+
+
+
+// export const getAccountById = async (id: number) => {
+//     try {
+//         const data = readData();
+//         return data.find((account: any) => account.id === id);
+//     } catch (error) {
+//         console.error('Failed to fetch account:', error);
+//         throw new Error('Failed to fetch account');
+//     }
+// };
 
 // Add a new account
 export const addAccount = async (account: any) => {
