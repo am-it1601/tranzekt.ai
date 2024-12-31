@@ -1,8 +1,11 @@
 import { getAccounts } from '@/lib/accounts';
 import { Button } from '@/components/ui/button';
-import { Plus } from 'lucide-react';
+import { DollarSign, Plus, TrendingDown, TrendingUp } from 'lucide-react';
 import AccountsTable from '@/components/fearures/accounts/AccountsTable';
 import Link from 'next/link';
+import AccountsSummary from '@/components/fearures/accounts/AccountsSummary';
+import { BarChartDouble } from '@/components/BarChartDouble';
+import { IncomeExpenseChart } from '@/components/IncomeExpenseChart';
 
 interface Account {
     id: number;
@@ -33,7 +36,17 @@ const Page = async () => {
                     </Link>
                 </div>
 
-                {/* Accounts Table Section */}
+                 {/* Area Chart Section */}
+                 {/* <div className="my-6">
+                    <AreaChartStaked />
+                </div> */}
+                {/* Summary Cards */}
+                 <div>
+                    <AccountsSummary/>
+                 </div>
+                    <IncomeExpenseChart />
+                    {/* <BarChartDouble /> */}
+                {/* Accounts Table Section */} 
                 <section>
                     <AccountsTable accounts={accounts} />
                 </section>

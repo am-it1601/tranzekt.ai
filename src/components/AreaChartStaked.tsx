@@ -156,7 +156,7 @@ export function AreaChartStaked() {
   })
 
   return (
-    <Card className=""> <div className="flex justify-between">
+    <Card className=""> <div className="flex justify-start gap-x-4">
     <div className="flex items-center space-x-2 p-2 font-medium">
       <div className="w-12 h-12 rounded-md flex justify-center text-white items-center bg-blue-500"><Landmark /></div>
       <div>Bank Balance</div></div>
@@ -165,10 +165,8 @@ export function AreaChartStaked() {
       <div>Cash Balance</div></div>
       <div className="flex items-center space-x-2 p-2 font-medium">
       <div className="w-12 h-12 rounded-md flex justify-center text-white items-center bg-blue-500"><CreditCard /></div>
-      <div>Credit Card Balance</div></div>
-      <div className="flex items-center space-x-2 p-2 font-medium">
-      <div className="w-12 h-12 rounded-md flex justify-center text-white items-center bg-blue-500"><UserRoundCheck /></div>
-      <div>Checking Balance</div></div>
+      <div>Loans</div></div>
+      
       </div>
       <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
         <div className="grid flex-1 gap-1 text-center sm:text-left">

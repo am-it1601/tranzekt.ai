@@ -56,9 +56,9 @@ const AccountsTable: React.FC<AccountsTableProps> = ({ accounts }) => {
                 <TableHeader className="bg-[#0179FE] rounded-t-3xl text-white">
                     <TableRow>
                         <TableHead className="pl-5">Account Name</TableHead>
+                        <TableHead className="px-2">Description</TableHead>
                         <TableHead className="pl-5">Account Type</TableHead>
                         <TableHead className="px-2">Opening Balance</TableHead>
-                        <TableHead className="px-2">Description</TableHead>
                         <TableHead className="text-center"></TableHead>
                     </TableRow>
                 </TableHeader>
@@ -74,13 +74,16 @@ const AccountsTable: React.FC<AccountsTableProps> = ({ accounts }) => {
                                         {account.account_name}
                                     </span>
                                 </TableCell>
+                                    <TableCell>{account.description}</TableCell>
                                 <TableCell>
                                     <Badge
-                                        className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full text-sm ${
+                                        className={`inline-flex items-center sm:px-4 sm:py-2 space-x-2 px-3 py-1 rounded-full text-sm ${
                                             account.account_type === 'Bank account'
                                                 ? 'border-[#0179FE] text-[#0179FE] border-2'
                                                 : account.account_type === 'Cash account'
                                                 ? 'border-[#039855] text-[#039855] border-2'
+                                                : account.account_type === 'Checking account'
+                                                ? 'border-[#c115746d] text-[#c115748e] border-2'
                                                 : 'border-gray-500 text-gray-500 border-2'
                                         }`}
                                     >
@@ -88,7 +91,6 @@ const AccountsTable: React.FC<AccountsTableProps> = ({ accounts }) => {
                                     </Badge>
                                 </TableCell>
                                 <TableCell>{account.opening_balance}</TableCell>
-                                <TableCell>{account.description}</TableCell>
                                 <TableCell className="text-center">
                                     <UserRoundPen
                                         onClick={(e) => {

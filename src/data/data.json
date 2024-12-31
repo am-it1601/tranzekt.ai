@@ -1,9 +1,10 @@
 [
   {
     "id": 1,
-    "account_name": "Kunal",
-    "opening_balance": "85445",
-    "description": "Account 1 description.",
+    "account_name": "kunal",
+    "opening_balance": 85445,
+    "Loan": 2,
+    "description": "Account 1 description.rr",
     "account_type": "Cash account",
     "transactions": [
       {
@@ -45,53 +46,13 @@
         "withdrawal": 407,
         "deposit": 0,
         "balance": 86131
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 553,
-        "balance": 86684
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Salary",
-        "withdrawal": 367,
-        "deposit": 0,
-        "balance": 86317
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Groceries",
-        "withdrawal": 10,
-        "deposit": 0,
-        "balance": 86307
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Deposit",
-        "withdrawal": 415,
-        "deposit": 0,
-        "balance": 85892
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 153,
-        "balance": 86045
       }
     ]
   },
   {
     "id": 2,
-    "account_name": "Karan",
-    "opening_balance": "46263",
+    "account_name": "kunal singh",
+    "opening_balance": 46263,
     "description": "Account 2 description.",
     "account_type": "Checking account",
     "transactions": [
@@ -134,53 +95,13 @@
         "withdrawal": 174,
         "deposit": 0,
         "balance": 47396
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Shopping",
-        "withdrawal": 121,
-        "deposit": 0,
-        "balance": 47275
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 11,
-        "deposit": 0,
-        "balance": 47264
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 252,
-        "balance": 47516
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 793,
-        "balance": 48309
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 997,
-        "balance": 49306
       }
     ]
   },
   {
     "id": 3,
-    "account_name": "Arjun",
-    "opening_balance": "55801",
+    "account_name": "Tax",
+    "opening_balance": 55801,
     "description": "Account 3 description. 44 4444",
     "account_type": "Bank account",
     "transactions": [
@@ -223,53 +144,13 @@
         "withdrawal": 0,
         "deposit": 308,
         "balance": 56579
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 30,
-        "balance": 56609
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 51,
-        "balance": 56660
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Utility Bill",
-        "withdrawal": 366,
-        "deposit": 0,
-        "balance": 56294
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 180,
-        "balance": 56474
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Groceries",
-        "withdrawal": 7,
-        "deposit": 0,
-        "balance": 56467
       }
     ]
   },
   {
     "id": 4,
     "account_name": "yogesh",
-    "opening_balance": "76423",
+    "opening_balance": 76423,
     "description": "Account 4 description.",
     "account_type": "Credit Card account",
     "transactions": [
@@ -312,53 +193,13 @@
         "withdrawal": 0,
         "deposit": 992,
         "balance": 76403
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 55,
-        "balance": 76458
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 802,
-        "balance": 77260
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Groceries",
-        "withdrawal": 350,
-        "deposit": 0,
-        "balance": 76910
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Utility Bill",
-        "withdrawal": 2,
-        "deposit": 0,
-        "balance": 76908
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 61,
-        "balance": 76969
       }
     ]
   },
   {
     "id": 5,
     "account_name": "Nitin",
-    "opening_balance": "18993",
+    "opening_balance": 18993,
     "description": "Account 5 description.",
     "account_type": "Checking account",
     "transactions": [
@@ -401,53 +242,13 @@
         "withdrawal": 375,
         "deposit": 0,
         "balance": 18689
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 250,
-        "balance": 18939
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 475,
-        "balance": 19414
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 81,
-        "balance": 19495
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Shopping",
-        "withdrawal": 471,
-        "deposit": 0,
-        "balance": 19024
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Deposit",
-        "withdrawal": 316,
-        "deposit": 0,
-        "balance": 18708
       }
     ]
   },
   {
     "id": 6,
     "account_name": "Germaine",
-    "opening_balance": "76395",
+    "opening_balance": 76395,
     "description": "Account 6 description.",
     "account_type": "Credit Card account",
     "transactions": [
@@ -490,53 +291,13 @@
         "withdrawal": 0,
         "deposit": 924,
         "balance": 78722
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Withdrawal",
-        "withdrawal": 266,
-        "deposit": 0,
-        "balance": 78456
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 765,
-        "balance": 79221
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Rent Payment",
-        "withdrawal": 445,
-        "deposit": 0,
-        "balance": 78776
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 424,
-        "balance": 79200
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Salary",
-        "withdrawal": 203,
-        "deposit": 0,
-        "balance": 78997
       }
     ]
   },
   {
     "id": 7,
     "account_name": "Sidnee",
-    "opening_balance": "80504",
+    "opening_balance": 80504,
     "description": "Account 7 description. 44",
     "account_type": "Checking account",
     "transactions": [
@@ -579,53 +340,13 @@
         "withdrawal": 0,
         "deposit": 925,
         "balance": 83775
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Withdrawal",
-        "withdrawal": 255,
-        "deposit": 0,
-        "balance": 83520
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Shopping",
-        "withdrawal": 493,
-        "deposit": 0,
-        "balance": 83027
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 166,
-        "balance": 83193
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Rent Payment",
-        "withdrawal": 101,
-        "deposit": 0,
-        "balance": 83092
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Shopping",
-        "withdrawal": 475,
-        "deposit": 0,
-        "balance": 82617
       }
     ]
   },
   {
     "id": 8,
     "account_name": "rahul",
-    "opening_balance": "26986",
+    "opening_balance": 4545,
     "description": "Account 8 description.",
     "account_type": "Cash account",
     "transactions": [
@@ -668,53 +389,13 @@
         "withdrawal": 0,
         "deposit": 761,
         "balance": 27091
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Shopping",
-        "withdrawal": 405,
-        "deposit": 0,
-        "balance": 26686
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Deposit",
-        "withdrawal": 18,
-        "deposit": 0,
-        "balance": 26668
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Salary",
-        "withdrawal": 94,
-        "deposit": 0,
-        "balance": 26574
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Utility Bill",
-        "withdrawal": 328,
-        "deposit": 0,
-        "balance": 26246
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 27,
-        "balance": 26273
       }
     ]
   },
   {
     "id": 9,
     "account_name": "Rivenzon",
-    "opening_balance": "58902",
+    "opening_balance": 58902,
     "description": "Account 9 description.",
     "account_type": "Cash account",
     "transactions": [
@@ -757,53 +438,13 @@
         "withdrawal": 0,
         "deposit": 466,
         "balance": 59557
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Shopping",
-        "withdrawal": 394,
-        "deposit": 0,
-        "balance": 59163
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Deposit",
-        "withdrawal": 450,
-        "deposit": 0,
-        "balance": 58713
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 577,
-        "balance": 59290
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 688,
-        "balance": 59978
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Groceries",
-        "withdrawal": 303,
-        "deposit": 0,
-        "balance": 59675
       }
     ]
   },
   {
     "id": 10,
     "account_name": "Sid",
-    "opening_balance": "90873",
+    "opening_balance": 90873,
     "description": "Account 10 description.",
     "account_type": "Bank account",
     "transactions": [
@@ -846,986 +487,148 @@
         "withdrawal": 0,
         "deposit": 590,
         "balance": 92739
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 231,
-        "balance": 92970
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 304,
-        "deposit": 0,
-        "balance": 92666
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 421,
-        "balance": 93087
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Rent Payment",
-        "withdrawal": 370,
-        "deposit": 0,
-        "balance": 92717
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 409,
-        "balance": 93126
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "account_name": "Gee Plais",
-    "opening_balance": "28799",
-    "description": "Account 11 description.",
-    "account_type": "Bank account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Salary",
-        "withdrawal": 412,
-        "deposit": 0,
-        "balance": 28387
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Withdrawal",
-        "withdrawal": 423,
-        "deposit": 0,
-        "balance": 27964
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 990,
-        "balance": 28954
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 12,
-        "balance": 28966
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 868,
-        "balance": 29834
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Shopping",
-        "withdrawal": 258,
-        "deposit": 0,
-        "balance": 29576
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 327,
-        "deposit": 0,
-        "balance": 29249
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 574,
-        "balance": 29823
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 209,
-        "deposit": 0,
-        "balance": 29614
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 657,
-        "balance": 30271
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "account_name": "Svenzon",
-    "opening_balance": "60358",
-    "description": "Account 12 description.",
-    "account_type": "Checking account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 686,
-        "balance": 61044
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Utility Bill",
-        "withdrawal": 68,
-        "deposit": 0,
-        "balance": 60976
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 55,
-        "balance": 61031
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Groceries",
-        "withdrawal": 90,
-        "deposit": 0,
-        "balance": 60941
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Deposit",
-        "withdrawal": 310,
-        "deposit": 0,
-        "balance": 60631
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Utility Bill",
-        "withdrawal": 215,
-        "deposit": 0,
-        "balance": 60416
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 208,
-        "balance": 60624
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 939,
-        "balance": 61563
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Rent Payment",
-        "withdrawal": 146,
-        "deposit": 0,
-        "balance": 61417
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Salary",
-        "withdrawal": 341,
-        "deposit": 0,
-        "balance": 61076
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "account_name": "Sidn3",
-    "opening_balance": "56763",
-    "description": "Account 13 description.",
-    "account_type": "Credit Card account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 75,
-        "balance": 56838
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 357,
-        "balance": 57195
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Deposit",
-        "withdrawal": 49,
-        "deposit": 0,
-        "balance": 57146
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 613,
-        "balance": 57759
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Withdrawal",
-        "withdrawal": 204,
-        "deposit": 0,
-        "balance": 57555
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Withdrawal",
-        "withdrawal": 339,
-        "deposit": 0,
-        "balance": 57216
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 662,
-        "balance": 57878
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Salary",
-        "withdrawal": 227,
-        "deposit": 0,
-        "balance": 57651
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 326,
-        "balance": 57977
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 105,
-        "balance": 58082
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "account_name": "Germa4",
-    "opening_balance": "64326",
-    "description": "Account 14 description.",
-    "account_type": "Bank account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Deposit",
-        "withdrawal": 392,
-        "deposit": 0,
-        "balance": 63934
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 267,
-        "balance": 64201
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Withdrawal",
-        "withdrawal": 250,
-        "deposit": 0,
-        "balance": 63951
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 450,
-        "balance": 64401
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 695,
-        "balance": 65096
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Shopping",
-        "withdrawal": 13,
-        "deposit": 0,
-        "balance": 65083
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 917,
-        "balance": 66000
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 75,
-        "balance": 66075
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 338,
-        "balance": 66413
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 327,
-        "balance": 66740
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "account_name": "Gester",
-    "opening_balance": "22078",
-    "description": "Account 15 description.",
-    "account_type": "Credit Card account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Utility Bill",
-        "withdrawal": 118,
-        "deposit": 0,
-        "balance": 21960
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 753,
-        "balance": 22713
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 596,
-        "balance": 23309
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 553,
-        "balance": 23862
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Rent Payment",
-        "withdrawal": 317,
-        "deposit": 0,
-        "balance": 23545
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Utility Bill",
-        "withdrawal": 425,
-        "deposit": 0,
-        "balance": 23120
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 181,
-        "balance": 23301
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Shopping",
-        "withdrawal": 467,
-        "deposit": 0,
-        "balance": 22834
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Shopping",
-        "withdrawal": 253,
-        "deposit": 0,
-        "balance": 22581
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Rent Payment",
-        "withdrawal": 234,
-        "deposit": 0,
-        "balance": 22347
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "account_name": "Germ6",
-    "opening_balance": "61180",
-    "description": "Account 16 description.",
-    "account_type": "Bank account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Salary",
-        "withdrawal": 156,
-        "deposit": 0,
-        "balance": 61024
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 288,
-        "balance": 61312
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Groceries",
-        "withdrawal": 419,
-        "deposit": 0,
-        "balance": 60893
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Salary",
-        "withdrawal": 237,
-        "deposit": 0,
-        "balance": 60656
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 261,
-        "balance": 60917
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Withdrawal",
-        "withdrawal": 437,
-        "deposit": 0,
-        "balance": 60480
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 969,
-        "balance": 61449
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Utility Bill",
-        "withdrawal": 115,
-        "deposit": 0,
-        "balance": 61334
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 47,
-        "deposit": 0,
-        "balance": 61287
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 158,
-        "balance": 61445
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "account_name": "Sidd7",
-    "opening_balance": "35418",
-    "description": "Account 17 description. 444",
-    "account_type": "Bank account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 449,
-        "balance": 35867
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Utility Bill",
-        "withdrawal": 436,
-        "deposit": 0,
-        "balance": 35431
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 290,
-        "balance": 35721
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 657,
-        "balance": 36378
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Groceries",
-        "withdrawal": 153,
-        "deposit": 0,
-        "balance": 36225
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 918,
-        "balance": 37143
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 0,
-        "deposit": 75,
-        "balance": 37218
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 75,
-        "balance": 37293
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 704,
-        "balance": 37997
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Utility Bill",
-        "withdrawal": 0,
-        "deposit": 890,
-        "balance": 38887
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "account_name": "ainee",
-    "opening_balance": "15466",
-    "description": "Account 18 description. 44",
-    "account_type": "Credit Card account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Rent Payment",
-        "withdrawal": 328,
-        "deposit": 0,
-        "balance": 15138
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 128,
-        "balance": 15266
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Rent Payment",
-        "withdrawal": 0,
-        "deposit": 192,
-        "balance": 15458
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Deposit",
-        "withdrawal": 0,
-        "deposit": 686,
-        "balance": 16144
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Salary",
-        "withdrawal": 30,
-        "deposit": 0,
-        "balance": 16114
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Deposit",
-        "withdrawal": 423,
-        "deposit": 0,
-        "balance": 15691
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Withdrawal",
-        "withdrawal": 0,
-        "deposit": 699,
-        "balance": 16390
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Shopping",
-        "withdrawal": 116,
-        "deposit": 0,
-        "balance": 16274
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Utility Bill",
-        "withdrawal": 375,
-        "deposit": 0,
-        "balance": 15899
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Shopping",
-        "withdrawal": 187,
-        "deposit": 0,
-        "balance": 15712
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "account_name": "Sizon",
-    "opening_balance": "89371",
-    "description": "Account 19 description.",
-    "account_type": "Bank account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 493,
-        "balance": 89864
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 249,
-        "balance": 90113
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Withdrawal",
-        "withdrawal": 0,
-        "deposit": 599,
-        "balance": 90712
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Withdrawal",
-        "withdrawal": 156,
-        "deposit": 0,
-        "balance": 90556
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Salary",
-        "withdrawal": 479,
-        "deposit": 0,
-        "balance": 90077
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Shopping",
-        "withdrawal": 411,
-        "deposit": 0,
-        "balance": 89666
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 419,
-        "deposit": 0,
-        "balance": 89247
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Salary",
-        "withdrawal": 0,
-        "deposit": 511,
-        "balance": 89758
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 330,
-        "deposit": 0,
-        "balance": 89428
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Utility Bill",
-        "withdrawal": 297,
-        "deposit": 0,
-        "balance": 89131
-      }
-    ]
-  },
-  {
-    "id": 20,
-    "account_name": "Geter",
-    "opening_balance": "99050",
-    "description": "Account 20 description.",
-    "account_type": "Checking account",
-    "transactions": [
-      {
-        "id": 1,
-        "date": "2023-12-01",
-        "description": "Withdrawal",
-        "withdrawal": 373,
-        "deposit": 0,
-        "balance": 98677
-      },
-      {
-        "id": 2,
-        "date": "2023-12-02",
-        "description": "Groceries",
-        "withdrawal": 242,
-        "deposit": 0,
-        "balance": 98435
-      },
-      {
-        "id": 3,
-        "date": "2023-12-03",
-        "description": "Withdrawal",
-        "withdrawal": 0,
-        "deposit": 337,
-        "balance": 98772
-      },
-      {
-        "id": 4,
-        "date": "2023-12-04",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 489,
-        "balance": 99261
-      },
-      {
-        "id": 5,
-        "date": "2023-12-05",
-        "description": "Deposit",
-        "withdrawal": 322,
-        "deposit": 0,
-        "balance": 98939
-      },
-      {
-        "id": 6,
-        "date": "2023-12-06",
-        "description": "Utility Bill",
-        "withdrawal": 473,
-        "deposit": 0,
-        "balance": 98466
-      },
-      {
-        "id": 7,
-        "date": "2023-12-07",
-        "description": "Groceries",
-        "withdrawal": 338,
-        "deposit": 0,
-        "balance": 98128
-      },
-      {
-        "id": 8,
-        "date": "2023-12-08",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 476,
-        "balance": 98604
-      },
-      {
-        "id": 9,
-        "date": "2023-12-09",
-        "description": "Salary",
-        "withdrawal": 461,
-        "deposit": 0,
-        "balance": 98143
-      },
-      {
-        "id": 10,
-        "date": "2023-12-10",
-        "description": "Shopping",
-        "withdrawal": 0,
-        "deposit": 326,
-        "balance": 98469
       }
     ]
   },
   {
     "id": 1734954259622,
     "account_type": "Checking account",
-    "account_name": "yogesh",
-    "opening_balance": "24234",
+    "account_name": "accounts payble",
+    "opening_balance": 24234,
     "description": "14143241134 salary"
   },
   {
     "id": 1735039912292,
     "account_type": "Bank account",
     "account_name": "yogesh",
-    "opening_balance": "",
+    "opening_balance": 4547,
     "description": "qqq"
   },
   {
     "id": 1735043072686,
     "account_type": "Credit Card account",
     "account_name": "yogesh kmt",
-    "opening_balance": "323335",
+    "opening_balance": 32332,
     "description": "3545"
   },
   {
     "id": 1735204400919,
     "account_type": "Credit Card account",
     "account_name": "yogesh",
-    "opening_balance": "4545",
+    "opening_balance": 4545,
     "description": "34535 44"
   },
   {
     "id": 1735214248520,
     "account_type": "Bank account",
     "account_name": "Sidnee Rivenzon",
-    "opening_balance": "7978",
+    "opening_balance": 797,
     "description": "786"
   },
   {
     "id": 1735282766538,
     "account_type": "Credit Card account",
     "account_name": "karan arjun 55",
-    "opening_balance": "789789",
+    "opening_balance": 78978,
     "description": "789789123123"
   },
   {
     "id": 1735283933004,
     "account_type": "Credit Card account",
     "account_name": "yogesh kumawat ioih",
-    "opening_balance": "3333",
+    "opening_balance": 3333,
     "description": "33336666"
+  },
+  {
+    "id": 1735554328453,
+    "account_type": "Bank account",
+    "account_name": "kunal",
+    "opening_balance": 10,
+    "description": "BJ"
+  },
+  {
+    "id": 1735554363481,
+    "account_type": "Bank account",
+    "account_name": "kunnu",
+    "opening_balance": 10,
+    "description": "bj"
+  },
+  {
+    "id": 1735555213488,
+    "account_type": "Bank account",
+    "account_name": "kunnu",
+    "opening_balance": 20,
+    "description": "20"
+  },
+  {
+    "id": 1735555281653,
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": 2,
+    "description": "2 rs"
+  },
+  {
+    "id": 1735556976392,
+    "account_type": "Bank account",
+    "account_name": "yogesh",
+    "opening_balance": 10,
+    "description": "10"
+  },
+  {
+    "id": 1735557249330,
+    "account_type": "Bank account",
+    "account_name": "yogesh kumawat ioih",
+    "opening_balance": 8,
+    "description": "8"
+  },
+  {
+    "id": 1735557273939,
+    "account_type": "Cash account",
+    "account_name": "yogesh kumawat ioih",
+    "opening_balance": 8,
+    "description": "08"
+  },
+  {
+    "id": 1735631200692,
+    "account_name": "yogesh",
+    "opening_balance": 2200,
+    "description": "2200",
+    "account_type": "Bank account"
+  },
+  {
+    "id": 1735639167762,
+    "account_name": "yogesh",
+    "opening_balance": 0,
+    "description": "0000007",
+    "account_type": "Cash account"
+  },
+  {
+    "id": 1735642178319,
+    "account_name": "yogesh credit",
+    "credit_limit": 2244,
+    "description": "credit card ",
+    "account_type": "Credit Card account"
+  },
+  {
+    "id": 1735642218858,
+    "account_name": "yogesh bank",
+    "opening_balance": 44555000,
+    "description": "bank acc 22",
+    "account_type": "Bank account"
+  },
+  {
+    "id": 1735642254379,
+    "account_name": "yogesh cash",
+    "opening_balance": 4444,
+    "description": "cash acc",
+    "account_type": "Cash account"
+  },
+  {
+    "id": 1735646056254,
+    "account_name": "yogesh",
+    "opening_balance": 777,
+    "ifsc_code": "777",
+    "description": "777",
+    "account_type": "Bank account"
   }
 ]

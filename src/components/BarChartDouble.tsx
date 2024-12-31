@@ -115,11 +115,11 @@ const chartConfig = {
     label: "Page Views",
   },
   desktop: {
-    label: "Total Assets",
+    label: "Total Income",
     color: "hsl(var(--chart-1))",
   },
   mobile: {
-    label: "Total Liabilities",
+    label: "Total Expense",
     color: "hsl(var(--chart-2))",
   },
 } satisfies ChartConfig
@@ -140,9 +140,9 @@ export function BarChartDouble() {
     <Card className="py-2">
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b p-0 sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 py-5 sm:py-6">
-          <CardTitle>Total Assets And Liabilities</CardTitle>
+          <CardTitle>Total Incomes And Expenses</CardTitle>
           <CardDescription>
-            Showing total assets and liabilities for 3 months
+            Showing total incomes and expenses for 3 months
           </CardDescription>
         </div>
         <div className="flex">

@@ -1,6 +1,7 @@
 import { getAccountById } from '@/lib/accounts'; // Import function from lib folder
 import AccountForm from '@/components/fearures/accounts/AccountForm';
 import AccountDetails from '@/components/fearures/accounts/AccountDetails';
+import BankAccountForm from '@/components/fearures/accounts/BankAccountForm';
 
 // Define the expected types for the props
 interface AccountPageProps {
@@ -32,7 +33,7 @@ export default async function AccountPage({ params, searchParams }: AccountPageP
             {mode === 'edit' ? (
                 <>
                     <h1 className="text-2xl font-bold p-6 pb-3">Edit Account</h1>
-                    <AccountForm accountData={accountData} mode="edit" />
+                    <BankAccountForm accountData={accountData} mode="edit" />
                 </>
             ) : (
                 <>

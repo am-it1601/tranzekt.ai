@@ -36,6 +36,12 @@ export async function getAccountById(id: string | number) {
     return accounts.find((acc: any) => acc.id === numericId);
 }
 
+export const fetchAccounts = async () => {
+    const response = await fetch('/api/accounts'); // Replace with your API endpoint
+    const data = await response.json();
+    return data;
+};
+
 
 
 // export const getAccountById = async (id: number) => {
