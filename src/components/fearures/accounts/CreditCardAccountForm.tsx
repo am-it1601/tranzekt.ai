@@ -60,12 +60,12 @@ const CreditCardAccountForm = ({ accountData, accountType, mode = 'add' }: { acc
     };
 
     return (
-        <div className="p-8 max-w-4xl mx-auto bg-white rounded-lg shadow-sm">
+        <div className=" max-w-4xl bg-white rounded-lg shadow-sm">
             <FormProvider {...form}>
                 <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                        <h2 className="text-2xl font-semibold text-[#0179FE]">
-                            {isEditMode ? 'Edit Credit Card Account' : 'Create Credit Card Account'}
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 py-4">
+                        <h2 className="text-xl font-semibold text-gray-700">
+                            {isEditMode ? 'Edit Credit Card Account' : 'Enter Credit Card Account Details'}
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <FormField name="account_name" control={form.control} render={({ field }) => (

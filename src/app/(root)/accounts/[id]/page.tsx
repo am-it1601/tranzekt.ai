@@ -1,39 +1,67 @@
-import { getAccountById } from '@/lib/accounts'; // Import function from lib folder
-import AccountForm from '@/components/fearures/accounts/AccountForm';
+import { getAccount } from '@/lib/accounts';
 import AccountDetails from '@/components/fearures/accounts/AccountDetails';
 import BankAccountForm from '@/components/fearures/accounts/BankAccountForm';
+import CashAccountForm from '@/components/fearures/accounts/CashAccountForm';
+import CreditCardAccountForm from '@/components/fearures/accounts/CreditCardAccountForm';
 
-// Define the expected types for the props
 interface AccountPageProps {
     params: {
-        id: string; // Ensure 'id' is a string
+        id: string;
     };
     searchParams?: {
-        mode?: string; // 'mode' is optional and a string
+        mode?: string;
     };
 }
 
-// Use the typed props
 export default async function AccountPage({ params, searchParams }: AccountPageProps) {
-    const { id } = params; // Get the dynamic route parameter
-    const mode = searchParams?.mode || 'view'; // Retrieve mode from query params
+    const { id } = params;
+    const mode = searchParams?.mode || 'view';
 
-    // Fetch account data server-side
     let accountData = null;
     try {
-        accountData = await getAccountById(id);
+        accountData = await getAccount(id);
     } catch (error) {
         console.error('Failed to fetch account data:', error);
         return <div>Error fetching account data</div>;
     }
 
-    // Render based on the mode
+    const renderAccountForm = () => {
+        switch (accountData?.accountType) {
+            case 'BANK':
+                return (
+                    <BankAccountForm
+                        accountData={accountData}
+                        accountType="Bank account"
+                        mode="edit"
+                    />
+                );
+            case 'CASH':
+                return (
+                    <CashAccountForm
+                        accountData={accountData}
+                        accountType="Cash account"
+                        mode="edit"
+                    />
+                );
+            case 'Credit Card account':
+                return (
+                    <CreditCardAccountForm
+                        accountData={accountData}
+                        accountType="Credit Card account"
+                        mode="edit"
+                    />
+                );
+            default:
+                return <div>Unsupported account type</div>;
+        }
+    };
+
     return (
-        <div>
+        <div className='p-6'>
             {mode === 'edit' ? (
                 <>
-                    <h1 className="text-2xl font-bold p-6 pb-3">Edit Account</h1>
-                    <BankAccountForm accountData={accountData} mode="edit" />
+                    <h1 className="text-2xl font-bold pb-3">Edit Account</h1>
+                    {renderAccountForm()}
                 </>
             ) : (
                 <>

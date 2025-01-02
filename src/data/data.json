@@ -630,5 +630,34 @@
     "ifsc_code": "777",
     "description": "777",
     "account_type": "Bank account"
+  },
+  {
+    "id": 1735713829504,
+    "account_name": "yogesh",
+    "opening_balance": 222233,
+    "ifsc_code": "2222",
+    "description": "2222",
+    "account_type": "Bank account"
+  },
+  {
+    "id": 1735713860322,
+    "account_name": "yogesh",
+    "opening_balance": 2222,
+    "description": "22223",
+    "account_type": "Cash account"
+  },
+  {
+    "id": 1735713885122,
+    "account_name": "yogesh",
+    "credit_limit": 2222,
+    "description": "22223",
+    "account_type": "Credit Card account"
+  },
+  {
+    "id": 1735724346404,
+    "account_name": "yogesh",
+    "opening_balance": 2555,
+    "description": "dfdfdf",
+    "account_type": "Cash account"
   }
 ]

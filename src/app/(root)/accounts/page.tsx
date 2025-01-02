@@ -1,4 +1,4 @@
-import { getAccounts } from '@/lib/accounts';
+import { getAccounts, getAllAccounts } from '@/lib/accounts';
 import { Button } from '@/components/ui/button';
 import { DollarSign, Plus, TrendingDown, TrendingUp } from 'lucide-react';
 import AccountsTable from '@/components/fearures/accounts/AccountsTable';
@@ -20,6 +20,8 @@ const Page = async () => {
     try {
         // Fetch accounts directly on the server
         const accounts: Account[] = await getAccounts();
+        const allAccount: [] = await getAllAccounts();
+
 
         return (
             <div className="transactions">
@@ -48,7 +50,7 @@ const Page = async () => {
                     {/* <BarChartDouble /> */}
                 {/* Accounts Table Section */} 
                 <section>
-                    <AccountsTable accounts={accounts} />
+                    <AccountsTable accounts={allAccount} />
                 </section>
             </div>
         );

@@ -22,11 +22,12 @@ import { Badge } from '@/components/ui/badge';
 
 // Define Account type
 interface Account {
-    id: number;
-    account_type: string;
-    account_name: string;
-    opening_balance: number;
+    _id: string;
+    accountType: string;
+    accountName: string;
+    openingBalance: number;
     description: string;
+
 }
 
 // Define Props for Table
@@ -43,7 +44,6 @@ const AccountsTable: React.FC<AccountsTableProps> = ({ accounts }) => {
     const indexOfLastRecord = currentPage * recordsPerPage;
     const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
     const currentRecords = accounts.slice(indexOfFirstRecord, indexOfLastRecord);
-    console.log("currentRecords",currentRecords)
     const totalPages = Math.ceil(accounts.length / recordsPerPage);
 
     const handlePageChange = (page: number) => {
@@ -65,37 +65,37 @@ const AccountsTable: React.FC<AccountsTableProps> = ({ accounts }) => {
                 <TableBody className="bg-white">
                     {currentRecords.length > 0 ? (
                         currentRecords.map((account) => (
-                            <TableRow key={account.id}>
+                            <TableRow key={account._id}>
                                 <TableCell className="text-sm font-semibold">
                                     <span
-                                        onClick={() => router.push(`/accounts/${account.id}`)}
+                                        onClick={() => router.push(`/accounts/${account._id}`)}
                                         className="cursor-pointer hover:underline text-black-1"
                                     >
-                                        {account.account_name}
+                                        {account.accountName}
                                     </span>
                                 </TableCell>
                                     <TableCell>{account.description}</TableCell>
                                 <TableCell>
                                     <Badge
                                         className={`inline-flex items-center sm:px-4 sm:py-2 space-x-2 px-3 py-1 rounded-full text-sm ${
-                                            account.account_type === 'Bank account'
+                                            account.accountType === 'BANK'
                                                 ? 'border-[#0179FE] text-[#0179FE] border-2'
-                                                : account.account_type === 'Cash account'
+                                                : account.accountType === 'CASH'
                                                 ? 'border-[#039855] text-[#039855] border-2'
-                                                : account.account_type === 'Checking account'
+                                                : account.accountType === 'Checking account'
                                                 ? 'border-[#c115746d] text-[#c115748e] border-2'
                                                 : 'border-gray-500 text-gray-500 border-2'
                                         }`}
                                     >
-                                        <span>{account.account_type}</span>
+                                        <span>{account.accountType}</span>
                                     </Badge>
                                 </TableCell>
-                                <TableCell>{account.opening_balance}</TableCell>
+                                <TableCell>{account.openingBalance}</TableCell>
                                 <TableCell className="text-center">
                                     <UserRoundPen
                                         onClick={(e) => {
                                             e.stopPropagation();
-                                            router.push(`/accounts/${account.id}?mode=edit`);
+                                            router.push(`/accounts/${account._id}?mode=edit`);
                                         }}
                                         className="bg-[#0179FE] p-1 text-white cursor-pointer rounded-full h-7 w-7"
                                     />

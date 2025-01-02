@@ -5,11 +5,11 @@ import { Edit3 } from 'lucide-react';
 import TransactionsTable from '@/components/fearures/Transactions/TransactionsTable'; // Import TransactionsTable component
 
 interface Account {
-    account_name: string;
-    account_type: string;
-    opening_balance: number;
+    accountName: string;
+    accountType: string;
+    openingBalance: number;
     description: string;
-    id: string; // Assuming the account object includes an `id` field.
+    _id: string; // Assuming the account object includes an `id` field.
 }
 
 const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
@@ -20,7 +20,7 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
     }
 
     const handleEdit = () => {
-        router.push(`/accounts/${account.id}?mode=edit`); // Navigate to the edit page with `mode=edit`
+        router.push(`/accounts/${account._id}?mode=edit`); // Navigate to the edit page with `mode=edit`
     };
 
     const handleCancel = () => {
@@ -34,7 +34,7 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
                 <div className="flex justify-between  items-start">
                     <div>
                         <h1 className="text-2xl text-white font-bold">
-                            {account.account_name}
+                            {account.accountName}
                         </h1>
                         <p className="text-gray-100">{account.description}</p>
                     </div>
@@ -54,14 +54,14 @@ const AccountDetails: React.FC<{ account: Account | null }> = ({ account }) => {
                         <h2 className="text-lg font-semibold text-white">
                             Account Type
                         </h2>
-                        <p className="text-gray-100">{account.account_type}</p>
+                        <p className="text-gray-100">{account.accountType}</p>
                     </div>
                     <div>
                         <h2 className="text-lg font-semibold text-white">
                             Opening Balance
                         </h2>
                         <p className="text-gray-100">
-                            {account.opening_balance}
+                            {account.openingBalance}
                         </p>
                     </div>
                 </div>
